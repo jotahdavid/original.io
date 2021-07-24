@@ -58,6 +58,10 @@ table {
   border-spacing: 0;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 a {
   text-decoration: none;
 }
