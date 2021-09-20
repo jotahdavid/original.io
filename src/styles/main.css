@@ -110,6 +110,10 @@ a {
 .main > .breadcrumb {
   height: 2.375rem;
 }
+.main > .product-view {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
 .categories {
   width: 100%;
@@ -217,6 +221,62 @@ a {
 }
 .breadcrumb__link.--current {
   font-weight: 700;
+}
+
+.carousel-vertical {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.carousel-vertical__gallery {
+  width: 5.125rem;
+}
+.carousel-vertical__title {
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  color: #dd8e73;
+}
+.carousel-vertical__controller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.625rem 0;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+.carousel-vertical__controller.--up {
+  margin-bottom: 0.625rem;
+}
+.carousel-vertical__controller.--down {
+  margin-top: 0.625rem;
+}
+.carousel-vertical__controller:hover {
+  background-color: #ebebeb;
+}
+.carousel-vertical__imgs-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.carousel-vertical__imgs-list__item {
+  width: 100%;
+}
+.carousel-vertical__imgs-list__item > img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+.carousel-vertical__full-img-container {
+  max-width: 26.875rem;
+}
+.carousel-vertical__full-img-container > img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

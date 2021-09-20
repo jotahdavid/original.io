@@ -7,4 +7,9 @@
   > .breadcrumb {
     height: rem(38);
   }
+
+  > .product-view {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
