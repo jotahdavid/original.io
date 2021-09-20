@@ -103,6 +103,14 @@ a {
   overflow: hidden;
 }
 
+.main {
+  width: 90%;
+  margin: 0 auto;
+}
+.main > .breadcrumb {
+  height: 2.375rem;
+}
+
 .categories {
   width: 100%;
   height: 100%;
@@ -194,6 +202,21 @@ a {
 .purchases__amount {
   color: dimgray;
   font-size: 0.75rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+}
+.breadcrumb, .breadcrumb__link {
+  font-size: 0.75rem;
+  color: #aeb6c1;
+}
+.breadcrumb__link {
+  padding: 0.25rem 0.375rem;
+}
+.breadcrumb__link.--current {
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=main.css.map */
