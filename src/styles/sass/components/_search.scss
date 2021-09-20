@@ -1,0 +1,48 @@
+@use "sass:math";
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+$input-width: 82;
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    pointer-events: none;
+    fill: map-get($colors, gray , 700);
+  }
+  
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    padding-left: rem(30);
+    width: rem($input-width);
+    height: rem(36);
+
+    border: none;
+    border-bottom: 1px solid transparentize(map-get($colors, gray, 700), 0.6);
+
+    font-family: $montserrat;
+    font-size: rem(13);
+    color: map-get($colors, gray , 700);
+ 
+    transition: width 300ms ease-in-out, border 200ms linear;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:not(:placeholder-shown), &:focus {
+      width: 100%;
+      border-bottom-color: map-get($colors, gray, 700);
+    }
+  }
+}

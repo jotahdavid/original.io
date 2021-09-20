@@ -1,0 +1,35 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+.categories {
+  width: 100%;
+  height: 100%;
+  max-width: rem(460);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    height: 100%;
+  }
+
+  &__link {
+    height: 100%;
+    padding: 0 1.25rem;
+
+    display: flex;
+    align-items: center;
+
+    font-size: rem(14);
+    text-transform: uppercase;
+    color: map-get($colors, gray, 700);
+
+    transition: background-color 200ms ease;
+
+    &:hover {
+      background-color: map-get($colors, gray, 200);
+    }
+  }
+}

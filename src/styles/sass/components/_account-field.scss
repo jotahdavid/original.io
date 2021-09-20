@@ -1,0 +1,24 @@
+@use "../settings/" as *;
+@use "../tools/" as *;
+
+.account-field {
+  display: flex;
+  align-items: center;
+
+  &__content,
+  &__link
+  {
+    font-size: rem(12);
+    color: map-get($colors, gray, 700);
+  }
+
+  &__link {
+    padding: rem(6);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: rem(4);
+  }
+}
