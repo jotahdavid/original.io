@@ -189,7 +189,7 @@ a {
   align-items: center;
 }
 .search__input {
-  padding-left: 1.875rem;
+  padding: 0 0 0 1.875rem;
   width: 5.125rem;
   height: 2.25rem;
   border: none;
@@ -381,7 +381,15 @@ a {
 }
 .product-info__color-options__item.--active {
   border: 1px solid white;
-  outline: 2px solid #dd8e73;
+  position: relative;
+}
+.product-info__color-options__item.--active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid #dd8e73;
 }
 .product-info__size-help {
   font-size: 0.875rem;

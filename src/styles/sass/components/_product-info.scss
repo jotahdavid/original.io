@@ -98,19 +98,27 @@
     width: 100%;
     display: flex;
     gap: rem(14);
-  }
 
-  &__color-options__item {
-    width: rem(26);
-    height: rem(26);
-    border-radius: 50%;
-    background-color: gray;
-
-    cursor: pointer;
-
-    &.--active {
-      border: 1px solid map-get($colors, white);
-      outline: 2px solid map-get($colors, orange);
+    &__item {
+      width: rem(26);
+      height: rem(26);
+      border-radius: 50%;
+      background-color: gray;
+  
+      cursor: pointer;
+  
+      &.--active {
+        border: 1px solid map-get($colors, white);
+        position: relative;
+      }
+      &.--active::after {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: -3px;
+        border-radius: 50%;
+        border: 2px solid map-get($colors, orange);
+      }
     }
   }
 
