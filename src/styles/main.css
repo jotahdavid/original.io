@@ -283,9 +283,14 @@ a {
   display: block;
   object-fit: cover;
   width: 100%;
+  transition: opacity 200ms ease;
 }
 .carousel-vertical__imgs-list__item:not(.--active) > img {
   opacity: 50%;
+  cursor: pointer;
+}
+.carousel-vertical__imgs-list__item:not(.--active) > img:hover {
+  opacity: 1;
 }
 .carousel-vertical__full-img-container {
   max-width: 26.875rem;
@@ -452,11 +457,23 @@ a {
   width: 95%;
   margin: 0 auto;
   justify-self: center;
-  cursor: pointer;
 }
-.carousel-horizontal__product > img {
+.carousel-horizontal__product-img {
+  cursor: pointer;
+  position: relative;
+  transition: opacity 200ms ease;
+  overflow: hidden;
+}
+.carousel-horizontal__product-img > img {
   display: block;
   width: 100%;
+  transition: transform 200ms ease-in;
+}
+.carousel-horizontal__product-img:hover {
+  opacity: 85%;
+}
+.carousel-horizontal__product-img:hover > img {
+  transform: scale(1.12);
 }
 .carousel-horizontal__product-info {
   width: 100%;

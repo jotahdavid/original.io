@@ -56,11 +56,18 @@
       display: block;
       object-fit: cover;
       width: 100%;
+
+      transition: opacity 200ms ease;
     }
 
     &:not(.--active) {
       > img {
         opacity: 50%;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
