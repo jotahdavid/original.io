@@ -1,4 +1,5 @@
 @use "../tools/" as *;
+@use "../settings/" as *;
 
 .main {
   width: 90%;
@@ -12,5 +13,24 @@
   > .product-view {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    margin-bottom: rem(60);
+  }
+
+  .product-recommendation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: rem(56);
+
+    &__title {
+      color: map-get($colors, orange);
+      text-transform: uppercase;
+      font-size: rem(26);
+      
+      padding: rem(6);
+      margin-bottom: rem(18);
+    }
   }
 }
