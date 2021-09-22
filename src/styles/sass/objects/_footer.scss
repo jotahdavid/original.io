@@ -31,6 +31,18 @@
     align-items: center;
     gap: rem(30);
   }
+
+  &__social-medias-icon {
+    > path {
+      transition: fill 200ms ease;
+    }
+  }
+  
+  &__social-medias-link:hover > &__social-medias-icon {
+    > path {
+      fill: map-get($colors, black);
+    }
+  }
   
   &__seals {
     grid-area: seals;

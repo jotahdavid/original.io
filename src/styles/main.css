@@ -154,6 +154,12 @@ a {
   align-items: center;
   gap: 1.875rem;
 }
+.footer__social-medias-icon > path {
+  transition: fill 200ms ease;
+}
+.footer__social-medias-link:hover > .footer__social-medias-icon > path {
+  fill: black;
+}
 .footer__seals {
   grid-area: seals;
   display: flex;
