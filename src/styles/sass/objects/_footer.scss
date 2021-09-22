@@ -6,7 +6,9 @@
   border-top: 2px solid map-get($colors, blue-gray);
   
   &__top {
+    max-width: rem(1400);
     width: 100%;
+    margin: 0 auto;
     height: rem(260);
 
     display: grid;
@@ -14,7 +16,7 @@
       '   . social-medias              .  newsletter    .'
       '   .         seals about-category  newsletter    .'
       '   .             .              .  newsletter    .';
-    grid-template-columns: 5% minmax(5%, rem(180)) 3fr 1fr 5%;
+    grid-template-columns: 5% minmax(5%, rem(180)) 3fr 1.5fr 5%;
     grid-template-rows: 25% auto auto;
     gap: rem(12);
 
@@ -86,8 +88,15 @@
 
   &__down {
     width: 100%;
-    min-height: rem(70);
     background-color: map-get($colors, orange);
+  }
+
+  &__down-container {
+    width: 100%;
+    max-width: rem(1200);
+    margin: 0 auto;
+    height: auto;
+    min-height: rem(70);
 
     display: grid;
     grid-template-areas: '. content logo .';

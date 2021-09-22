@@ -105,6 +105,7 @@ a {
 
 .main {
   width: 90%;
+  max-width: 75rem;
   margin: 0 auto;
   margin-bottom: 8.75rem;
 }
@@ -135,11 +136,13 @@ a {
   border-top: 2px solid #aeb6c1;
 }
 .footer__top {
+  max-width: 87.5rem;
   width: 100%;
+  margin: 0 auto;
   height: 16.25rem;
   display: grid;
   grid-template-areas: "   . social-medias              .  newsletter    ." "   .         seals about-category  newsletter    ." "   .             .              .  newsletter    .";
-  grid-template-columns: 5% minmax(5%, 11.25rem) 3fr 1fr 5%;
+  grid-template-columns: 5% minmax(5%, 11.25rem) 3fr 1.5fr 5%;
   grid-template-rows: 25% auto auto;
   gap: 0.75rem;
   position: relative;
@@ -196,8 +199,14 @@ a {
 }
 .footer__down {
   width: 100%;
-  min-height: 4.375rem;
   background-color: #dd8e73;
+}
+.footer__down-container {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  height: auto;
+  min-height: 4.375rem;
   display: grid;
   grid-template-areas: ". content logo .";
   grid-template-columns: 5% 2fr 1fr 5%;
