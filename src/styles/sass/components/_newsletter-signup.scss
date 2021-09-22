@@ -37,6 +37,7 @@
   &__input {
     width: 100%;
 
+    font-family: $montserrat;
     color: hsl(0, 0%, 13%);
     font-size: rem(14);
     border: none;
@@ -58,6 +59,7 @@
     left: 0;
     font-size: rem(14);
 
+    font-family: $montserrat;
     color: hsl(0, 0%, 13%);
     opacity: 50%;
     cursor: text;

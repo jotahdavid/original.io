@@ -706,6 +706,7 @@ a {
 }
 .newsletter-signup__input {
   width: 100%;
+  font-family: "Montserrat", sans-serif;
   color: #212121;
   font-size: 0.875rem;
   border: none;
@@ -723,6 +724,7 @@ a {
   top: 50%;
   left: 0;
   font-size: 0.875rem;
+  font-family: "Montserrat", sans-serif;
   color: #212121;
   opacity: 50%;
   cursor: text;
