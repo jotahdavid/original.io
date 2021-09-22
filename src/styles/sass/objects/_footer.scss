@@ -1,0 +1,114 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+.footer {
+  width: 100%;
+  border-top: 2px solid map-get($colors, blue-gray);
+  
+  &__top {
+    width: 100%;
+    height: rem(260);
+
+    display: grid;
+    grid-template-areas:
+      '   . social-medias              .  newsletter    .'
+      '   .         seals about-category  newsletter    .'
+      '   .             .              .  newsletter    .';
+    grid-template-columns: 5% minmax(5%, rem(180)) 3fr 1fr 5%;
+    grid-template-rows: 25% auto auto;
+    gap: rem(12);
+
+    position: relative;
+  }
+
+  &__social-medias {
+    grid-area: social-medias;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: rem(30);
+  }
+  
+  &__seals {
+    grid-area: seals;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: rem(180);
+    width: 90%;
+    margin-right: auto;
+
+    > img:first-of-type {
+      display: block;
+      max-width: rem(92);
+      width: 50%;
+      object-fit: cover;
+    }
+    
+    > img:last-of-type {
+      display: block;
+      max-width: rem(54);
+      width: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__about-category {
+    grid-area: about-category;
+
+    display: flex;
+    justify-content: space-around;
+    gap: rem(12);
+  }
+
+  &__newsletter-signup {
+    grid-area: newsletter;
+    justify-self: center;
+
+    max-width: rem(290);
+    max-height: rem(290);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    border: 2px solid map-get($colors, blue-gray);
+    background-color: map-get($colors, white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: -35%;
+  }
+
+  &__down {
+    width: 100%;
+    min-height: rem(70);
+    background-color: map-get($colors, orange);
+
+    display: grid;
+    grid-template-areas: '. content logo .';
+    grid-template-columns: 5% 2fr 1fr 5%;
+
+    align-items: center;
+  }
+
+  &__info {
+    grid-area: content;
+    
+    max-width: rem(720);
+    margin-left: auto;
+    font-size: rem(13);
+    color: map-get($colors, white);
+  }
+  
+  &__logo-container {
+    grid-area: logo;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+}

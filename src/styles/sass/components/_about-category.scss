@@ -1,0 +1,49 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+.about-category {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  &__title {
+    font-size: rem(12.5);
+    font-weight: map-get($font-bold, bold);
+    text-transform: uppercase;
+    color: map-get($colors, blue-gray);
+  }
+
+  &__links-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: rem(14);
+    color: hsl(0, 0%, 13%);
+
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: rem(2);
+      background-color: map-get($colors, orange);
+
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+
+      transform: scaleX(0);
+      transition: transform 300ms ease-in;
+    }
+    
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+}

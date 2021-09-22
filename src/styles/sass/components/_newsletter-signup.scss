@@ -1,0 +1,95 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+.newsletter-signup {
+  width: 80%;
+  height: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  &__title {
+    text-transform: uppercase;
+    color: hsl(0, 0%, 13%);
+    font-weight: map-get($font-bold, bold);
+    text-align: center;
+
+    margin-bottom: rem(8);
+  }
+
+  &__label {
+    width: 100%;
+    height: rem(42);
+
+    display: flex;
+    align-items: flex-end;
+
+    margin-bottom: rem(14);
+    position: relative;
+
+    &:last-of-type {
+      margin-bottom: rem(28);
+    }
+  }
+
+  &__input {
+    width: 100%;
+
+    color: hsl(0, 0%, 13%);
+    font-size: rem(14);
+    border: none;
+    border-bottom: 2px solid map-get($colors, blue-gray);
+    height: rem(28);
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: rem(14);
+
+    color: hsl(0, 0%, 13%);
+    opacity: 50%;
+    cursor: text;
+
+    transition: all 200ms ease;
+  }
+
+  &__input:focus + &__placeholder,
+  &__input:not(:placeholder-shown) + &__placeholder
+  {
+    opacity: 1;
+    top: 0;
+    font-size: rem(12);
+  }
+
+  &__button {
+    height: rem(50);
+    max-width: rem(110);
+    width: 80%;
+
+    font-family: $montserrat;
+    text-transform: uppercase;
+    border: none;
+    border-radius: rem(3);
+    background-color: map-get($colors, orange);
+    color: map-get($colors, white);
+
+    cursor: pointer;
+    transition: background-color 200ms ease;
+
+    &:hover {
+      background-color: darken(map-get($colors, orange), 8);
+    }
+  }
+}
