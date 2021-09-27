@@ -1,0 +1,51 @@
+@use "./px-to-rem" as *;
+
+@mixin breakpoint($point) {
+  @if $point == small-only {
+    @media (max-width: rem(599)) {
+      @content;
+    }
+  }
+
+  @else if $point == small-up {
+    @media (min-width: rem(600)) {
+      @content;
+    }
+  }
+
+  @else if $point == medium-only {
+    @media (max-width: rem(899)) {
+      @content;
+    }
+  }
+
+  @else if $point == medium-up {
+    @media (min-width: rem(900)) {
+      @content;
+    }
+  }
+
+  @else if $point == large-only {
+    @media (max-width: rem(1199)) {
+      @content;
+    }
+  }
+
+  @else if $point == large-up {
+    @media (min-width: rem(1200)) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: rem($point)) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-between($point1, $point2) {
+  @media (max-width: rem($point1)) and (min-width: rem($point2)) {
+    @content;
+  }
+}
