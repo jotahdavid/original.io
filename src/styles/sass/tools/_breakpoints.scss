@@ -9,6 +9,14 @@
     @media (min-width: rem(600)) {
       @content;
     }
+  } @else if $point == smedium-only {
+    @media (max-width: rem(699)) {
+      @content;
+    }
+  } @else if $point == smedium-up {
+    @media (min-width: rem(700)) {
+      @content;
+    }
   } @else if $point == medium-only {
     @media (max-width: rem(899)) {
       @content;
