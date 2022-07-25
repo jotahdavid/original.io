@@ -158,6 +158,7 @@
     border: none;
     border-radius: rem(6);
     background-color: map-get($colors, green);
+    padding: 0 1rem;
 
     color: map-get($colors, white);
     font-size: rem(18);

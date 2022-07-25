@@ -1,0 +1,12 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+.section-title {
+  color: map-get($colors, orange);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: rem(26);
+
+  padding: rem(6);
+  margin-bottom: rem(18);
+}

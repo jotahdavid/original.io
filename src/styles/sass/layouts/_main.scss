@@ -7,16 +7,17 @@
   margin: 0 auto;
   margin-bottom: rem(140);
 
+  @include breakpoint(smedium-only) {
+    width: 100%;
+  }
+
   > .breadcrumb {
     height: rem(38);
     margin-bottom: rem(12);
-  }
 
-  > .product-view {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    margin-bottom: rem(60);
+    @include breakpoint(smedium-only) {
+      display: none;
+    }
   }
 
   .product-recommendation {

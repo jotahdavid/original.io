@@ -4,4 +4,7 @@
   @include breakpoint(medium-only) {
     font-size: rem(14);
   }
+  @include breakpoint(small-only) {
+    font-size: rem(12);
+  }
 }

@@ -1,0 +1,77 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+.product-view {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-bottom: rem(60);
+
+  @include breakpoint(smedium-only) {
+    grid-template-columns: 1fr;
+  }
+
+  > .section-title {
+    display: none;
+
+    @include breakpoint(smedium-only) {
+      font-size: rem(36);
+      display: initial;
+    }
+
+    @include breakpoint(small-only) {
+      font-size: rem(30);
+    }
+  }
+
+  > .carousel-vertical {
+    @include breakpoint(smedium-only) {
+      display: none;
+    }
+  }
+
+  > .product-info {
+    @include breakpoint(smedium-only) {
+      margin: 0;
+
+      .product-info__name,
+      .product-info__code {
+        display: none;
+      }
+
+      .product-info__card {
+        max-width: rem(600);
+        width: 100%;
+        border: none;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1rem;
+
+        > * {
+          grid-column: 1 / -1;
+        }
+      }
+
+      .product-info__price-wrapper {
+        margin: 0;
+        grid-row: 3;
+        grid-column: 1;
+      }
+      .product-info__button {
+        grid-column: 2;
+        height: 100%;
+        margin: 0;
+        font-size: rem(22);
+      }
+
+      .product-info__price {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .product-info__current-price {
+        font-size: rem(30);
+      }
+    }
+  }
+}
