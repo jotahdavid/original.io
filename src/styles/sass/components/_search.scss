@@ -14,9 +14,9 @@ $input-width: 82;
   &__icon {
     position: absolute;
     pointer-events: none;
-    fill: map-get($colors, gray , 700);
+    fill: map-get($colors, gray, 700);
   }
-  
+
   &__label {
     display: flex;
     align-items: center;
@@ -32,15 +32,16 @@ $input-width: 82;
 
     font-family: $montserrat;
     font-size: rem(13);
-    color: map-get($colors, gray , 700);
- 
+    color: map-get($colors, gray, 700);
+
     transition: width 300ms ease-in-out, border 200ms linear;
 
     &:focus-visible {
       outline: none;
     }
 
-    &:not(:placeholder-shown), &:focus {
+    &:not(:placeholder-shown),
+    &:focus {
       width: 100%;
       border-bottom-color: map-get($colors, gray, 700);
     }

@@ -68,8 +68,7 @@
   }
 
   &__input:focus + &__placeholder,
-  &__input:not(:placeholder-shown) + &__placeholder
-  {
+  &__input:not(:placeholder-shown) + &__placeholder {
     opacity: 1;
     top: 0;
     font-size: rem(12);

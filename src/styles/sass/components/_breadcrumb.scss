@@ -5,7 +5,8 @@
   display: flex;
   align-items: center;
 
-  &, &__link {
+  &,
+  &__link {
     font-size: rem(12);
     color: map-get($colors, blue-gray);
   }

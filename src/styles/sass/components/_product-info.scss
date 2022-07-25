@@ -60,8 +60,7 @@
   }
 
   &__color-line,
-  &__size-line
-  {
+  &__size-line {
     max-width: rem(360);
   }
 
@@ -104,15 +103,15 @@
       height: rem(26);
       border-radius: 50%;
       background-color: gray;
-  
+
       cursor: pointer;
-  
+
       &.--active {
         border: 1px solid map-get($colors, white);
         position: relative;
       }
       &.--active::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         inset: -3px;

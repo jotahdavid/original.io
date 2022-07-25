@@ -24,17 +24,16 @@
     transition: opacity 200ms ease;
     overflow: hidden;
 
-
     > img {
       display: block;
       width: 100%;
-      
+
       transition: transform 200ms ease-in;
     }
 
     &:hover {
       opacity: 85%;
-      
+
       > img {
         transform: scale(1.12);
       }

@@ -15,7 +15,7 @@
     width: 100%;
     height: rem(52);
 
-    $border: rem(1) solid map-get($colors,gray, 400);
+    $border: rem(1) solid map-get($colors, gray, 400);
     border-top: $border;
     border-bottom: $border;
   }

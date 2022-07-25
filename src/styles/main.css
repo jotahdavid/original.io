@@ -8,19 +8,87 @@
   box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -30,8 +98,17 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -39,16 +116,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -78,8 +159,8 @@ a {
 .header__menu-wrapper {
   width: 100%;
   height: 3.25rem;
-  border-top: 0.0625rem solid #cccccc;
-  border-bottom: 0.0625rem solid #cccccc;
+  border-top: 0.0625rem solid hsl(0deg, 0%, 80%);
+  border-bottom: 0.0625rem solid hsl(0deg, 0%, 80%);
 }
 .header__menu {
   width: 90%;
@@ -124,7 +205,7 @@ a {
   align-items: center;
 }
 .main .product-recommendation__title {
-  color: #dd8e73;
+  color: hsl(15deg, 61%, 66%);
   text-transform: uppercase;
   font-size: 1.625rem;
   padding: 0.375rem;
@@ -133,7 +214,7 @@ a {
 
 .footer {
   width: 100%;
-  border-top: 2px solid #aeb6c1;
+  border-top: 2px solid hsl(215deg, 13%, 72%);
 }
 .footer__top {
   max-width: 87.5rem;
@@ -158,7 +239,7 @@ a {
   transition: fill 200ms ease;
 }
 .footer__social-medias-link:hover > .footer__social-medias-icon > path {
-  fill: black;
+  fill: hsl(0deg, 0%, 0%);
 }
 .footer__seals {
   grid-area: seals;
@@ -195,8 +276,8 @@ a {
   width: 30vw;
   height: 30vw;
   border-radius: 50%;
-  border: 2px solid #aeb6c1;
-  background-color: white;
+  border: 2px solid hsl(215deg, 13%, 72%);
+  background-color: hsl(0deg, 0%, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,7 +286,7 @@ a {
 }
 .footer__down {
   width: 100%;
-  background-color: #dd8e73;
+  background-color: hsl(15deg, 61%, 66%);
 }
 .footer__down-container {
   width: 100%;
@@ -223,7 +304,7 @@ a {
   max-width: 45rem;
   margin-left: auto;
   font-size: 0.8125rem;
-  color: white;
+  color: hsl(0deg, 0%, 100%);
 }
 .footer__logo-container {
   grid-area: logo;
@@ -250,11 +331,11 @@ a {
   align-items: center;
   font-size: 0.875rem;
   text-transform: uppercase;
-  color: dimgray;
+  color: hsl(0deg, 0%, 41%);
   transition: background-color 200ms ease;
 }
 .categories__link:hover {
-  background-color: #ebebeb;
+  background-color: hsl(0deg, 0%, 92%);
 }
 
 .account-field {
@@ -263,7 +344,7 @@ a {
 }
 .account-field__content, .account-field__link {
   font-size: 0.75rem;
-  color: dimgray;
+  color: hsl(0deg, 0%, 41%);
 }
 .account-field__link {
   padding: 0.375rem;
@@ -283,7 +364,7 @@ a {
 .search__icon {
   position: absolute;
   pointer-events: none;
-  fill: dimgray;
+  fill: hsl(0deg, 0%, 41%);
 }
 .search__label {
   display: flex;
@@ -297,7 +378,7 @@ a {
   border-bottom: 1px solid rgba(105, 105, 105, 0.4);
   font-family: "Montserrat", sans-serif;
   font-size: 0.8125rem;
-  color: dimgray;
+  color: hsl(0deg, 0%, 41%);
   transition: width 300ms ease-in-out, border 200ms linear;
 }
 .search__input:focus-visible {
@@ -305,7 +386,7 @@ a {
 }
 .search__input:not(:placeholder-shown), .search__input:focus {
   width: 100%;
-  border-bottom-color: dimgray;
+  border-bottom-color: hsl(0deg, 0%, 41%);
 }
 
 .purchases__action {
@@ -317,10 +398,10 @@ a {
   gap: 0.1875rem;
 }
 .purchases__icon {
-  fill: dimgray;
+  fill: hsl(0deg, 0%, 41%);
 }
 .purchases__amount {
-  color: dimgray;
+  color: hsl(0deg, 0%, 41%);
   font-size: 0.75rem;
 }
 
@@ -330,7 +411,7 @@ a {
 }
 .breadcrumb, .breadcrumb__link {
   font-size: 0.75rem;
-  color: #aeb6c1;
+  color: hsl(215deg, 13%, 72%);
 }
 .breadcrumb__link {
   padding: 0.25rem 0.375rem;
@@ -352,7 +433,7 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 0.8125rem;
-  color: #dd8e73;
+  color: hsl(15deg, 61%, 66%);
 }
 .carousel-vertical__controller {
   width: 100%;
@@ -369,7 +450,7 @@ a {
   margin-top: 0.625rem;
 }
 .carousel-vertical__controller:hover {
-  background-color: #ebebeb;
+  background-color: hsl(0deg, 0%, 92%);
 }
 .carousel-vertical__imgs-list {
   width: 100%;
@@ -408,7 +489,7 @@ a {
 }
 .product-info__card {
   border-radius: 0.1875rem;
-  border: 2px solid #d1e0de;
+  border: 2px solid hsl(172deg, 20%, 85%);
   max-width: 27.5rem;
   margin: 0 auto;
   padding: 1rem;
@@ -423,7 +504,7 @@ a {
   display: block;
   margin-bottom: 1rem;
   font-size: 0.875rem;
-  color: #212121;
+  color: hsl(0deg, 0%, 13%);
 }
 .product-info__price-wrapper {
   margin-bottom: 1.5rem;
@@ -433,19 +514,19 @@ a {
   align-items: center;
   gap: 0.25rem;
   font-size: 1rem;
-  color: #e25340;
+  color: hsl(7deg, 74%, 57%);
 }
 .product-info__old-price {
   text-decoration: line-through;
 }
 .product-info__current-price {
   font-size: 1.25rem;
-  color: dimgray;
+  color: hsl(0deg, 0%, 41%);
   font-weight: 700;
 }
 .product-info__installment {
   padding: 0.25rem 0;
-  color: gray;
+  color: hsl(0deg, 0%, 50%);
   font-size: 0.875rem;
 }
 .product-info__color-line, .product-info__size-line {
@@ -463,7 +544,7 @@ a {
   align-items: center;
   gap: 0.75rem;
   font-size: 0.875rem;
-  color: #212121;
+  color: hsl(0deg, 0%, 13%);
 }
 .product-info__option-name-line {
   display: flex;
@@ -471,7 +552,7 @@ a {
   justify-content: space-between;
 }
 .product-info__chosen-option {
-  color: #5f74ab;
+  color: hsl(223deg, 31%, 52%);
 }
 .product-info__color-options {
   width: 100%;
@@ -486,7 +567,7 @@ a {
   cursor: pointer;
 }
 .product-info__color-options__item.--active {
-  border: 1px solid white;
+  border: 1px solid hsl(0deg, 0%, 100%);
   position: relative;
 }
 .product-info__color-options__item.--active::after {
@@ -495,20 +576,20 @@ a {
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  border: 2px solid #dd8e73;
+  border: 2px solid hsl(15deg, 61%, 66%);
 }
 .product-info__size-help {
   font-size: 0.875rem;
   text-decoration: underline;
-  color: #dd8e73;
+  color: hsl(15deg, 61%, 66%);
 }
 .product-info__size-options {
   display: flex;
   justify-content: space-between;
 }
 .product-info__size-options__item {
-  color: #5f74ab;
-  border: 1px solid #e3e3e3;
+  color: hsl(223deg, 31%, 52%);
+  border: 1px solid hsl(0deg, 0%, 89%);
   border-radius: 0.25rem;
   width: 2.125rem;
   height: 2.125rem;
@@ -518,8 +599,8 @@ a {
   cursor: pointer;
 }
 .product-info__size-options__item.--active {
-  background-color: #dd8e73;
-  color: white;
+  background-color: hsl(15deg, 61%, 66%);
+  color: hsl(0deg, 0%, 100%);
   font-weight: 700;
 }
 .product-info__button {
@@ -527,8 +608,8 @@ a {
   height: 3.75rem;
   border: none;
   border-radius: 0.375rem;
-  background-color: #31907a;
-  color: white;
+  background-color: hsl(166deg, 49%, 38%);
+  color: hsl(0deg, 0%, 100%);
   font-size: 1.125rem;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -541,7 +622,7 @@ a {
 }
 .product-info__description {
   font-size: 0.875rem;
-  color: #212121;
+  color: hsl(0deg, 0%, 13%);
   line-height: 200%;
 }
 
@@ -593,7 +674,7 @@ a {
   border-radius: 50%;
 }
 .carousel-horizontal__product-info__price {
-  color: #212121;
+  color: hsl(0deg, 0%, 13%);
   font-size: 1rem;
 }
 .carousel-horizontal__controllers {
@@ -610,7 +691,7 @@ a {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  border: 2px solid #2a5974;
+  border: 2px solid hsl(202deg, 47%, 31%);
   transition: background-color 200ms ease;
 }
 .carousel-horizontal__controllers__controller.--left {
@@ -620,14 +701,14 @@ a {
   transform: rotate(-90deg);
 }
 .carousel-horizontal__controllers__controller:hover {
-  background-color: #2a5974;
+  background-color: hsl(202deg, 47%, 31%);
 }
 .carousel-horizontal__controllers__icon > path {
-  fill: #2a5974;
+  fill: hsl(202deg, 47%, 31%);
   transition: fill 200ms ease;
 }
 .carousel-horizontal__controllers__controller:hover > .carousel-horizontal__controllers__icon > path {
-  fill: white;
+  fill: hsl(0deg, 0%, 100%);
 }
 .carousel-horizontal__controllers__index {
   display: flex;
@@ -635,7 +716,7 @@ a {
   justify-content: center;
   width: 4.375rem;
   height: 2.25rem;
-  color: #2a5974;
+  color: hsl(202deg, 47%, 31%);
   font-size: 0.875rem;
 }
 
@@ -648,7 +729,7 @@ a {
   font-size: 0.78125rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #aeb6c1;
+  color: hsl(215deg, 13%, 72%);
 }
 .about-category__links-list {
   width: 100%;
@@ -659,7 +740,7 @@ a {
 .about-category__link {
   text-decoration: none;
   font-size: 0.875rem;
-  color: #212121;
+  color: hsl(0deg, 0%, 13%);
   position: relative;
 }
 .about-category__link::after {
@@ -667,7 +748,7 @@ a {
   display: block;
   width: 100%;
   height: 0.125rem;
-  background-color: #dd8e73;
+  background-color: hsl(15deg, 61%, 66%);
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -688,7 +769,7 @@ a {
 }
 .newsletter-signup__title {
   text-transform: uppercase;
-  color: #212121;
+  color: hsl(0deg, 0%, 13%);
   font-weight: 700;
   text-align: center;
   margin-bottom: 0.5rem;
@@ -707,10 +788,10 @@ a {
 .newsletter-signup__input {
   width: 100%;
   font-family: "Montserrat", sans-serif;
-  color: #212121;
+  color: hsl(0deg, 0%, 13%);
   font-size: 0.875rem;
   border: none;
-  border-bottom: 2px solid #aeb6c1;
+  border-bottom: 2px solid hsl(215deg, 13%, 72%);
   height: 1.75rem;
 }
 .newsletter-signup__input:focus {
@@ -725,7 +806,7 @@ a {
   left: 0;
   font-size: 0.875rem;
   font-family: "Montserrat", sans-serif;
-  color: #212121;
+  color: hsl(0deg, 0%, 13%);
   opacity: 50%;
   cursor: text;
   transition: all 200ms ease;
@@ -743,8 +824,8 @@ a {
   text-transform: uppercase;
   border: none;
   border-radius: 0.1875rem;
-  background-color: #dd8e73;
-  color: white;
+  background-color: hsl(15deg, 61%, 66%);
+  color: hsl(0deg, 0%, 100%);
   cursor: pointer;
   transition: background-color 200ms ease;
 }

@@ -28,7 +28,7 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       width: 100%;
       height: rem(2);
@@ -41,7 +41,7 @@
       transform: scaleX(0);
       transition: transform 300ms ease-in;
     }
-    
+
     &:hover::after {
       transform: scaleX(1);
     }

@@ -4,7 +4,7 @@
 .footer {
   width: 100%;
   border-top: 2px solid map-get($colors, blue-gray);
-  
+
   &__top {
     max-width: rem(1400);
     width: 100%;
@@ -13,9 +13,9 @@
 
     display: grid;
     grid-template-areas:
-      '   . social-medias              .  newsletter    .'
-      '   .         seals about-category  newsletter    .'
-      '   .             .              .  newsletter    .';
+      "   . social-medias              .  newsletter    ."
+      "   .         seals about-category  newsletter    ."
+      "   .             .              .  newsletter    .";
     grid-template-columns: 5% minmax(5%, rem(180)) 3fr 1.5fr 5%;
     grid-template-rows: 25% auto auto;
     gap: rem(12);
@@ -37,13 +37,13 @@
       transition: fill 200ms ease;
     }
   }
-  
+
   &__social-medias-link:hover > &__social-medias-icon {
     > path {
       fill: map-get($colors, black);
     }
   }
-  
+
   &__seals {
     grid-area: seals;
 
@@ -61,7 +61,7 @@
       width: 50%;
       object-fit: cover;
     }
-    
+
     > img:last-of-type {
       display: block;
       max-width: rem(54);
@@ -111,7 +111,7 @@
     min-height: rem(70);
 
     display: grid;
-    grid-template-areas: '. content logo .';
+    grid-template-areas: ". content logo .";
     grid-template-columns: 5% 2fr 1fr 5%;
 
     align-items: center;
@@ -119,13 +119,13 @@
 
   &__info {
     grid-area: content;
-    
+
     max-width: rem(720);
     margin-left: auto;
     font-size: rem(13);
     color: map-get($colors, white);
   }
-  
+
   &__logo-container {
     grid-area: logo;
 
