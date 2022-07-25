@@ -31,6 +31,12 @@
   }
 
   > .product-info {
+    @include breakpoint(smedium-up) {
+      .gallery {
+        display: none;
+      }
+    }
+
     @include breakpoint(smedium-only) {
       margin: 0;
 

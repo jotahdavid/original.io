@@ -1,0 +1,39 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+.gallery {
+  width: 100%;
+  height: rem(480);
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__current {
+    height: 100%;
+  }
+
+  &__bullets {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+
+    position: absolute;
+    bottom: 1rem;
+
+    &__item {
+      width: 16px;
+      height: 16px;
+      background-color: transparent;
+
+      border: 3px solid map-get($colors, white);
+      border-radius: 50%;
+
+      &.--current {
+        border-color: transparent;
+        background-color: map-get($colors, orange);
+      }
+    }
+  }
+}
