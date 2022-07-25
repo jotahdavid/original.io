@@ -1,0 +1,23 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+.menu-hamburger {
+  border: none;
+  background-color: transparent;
+  width: rem(34);
+  height: rem(28);
+  cursor: pointer;
+
+  box-sizing: content-box;
+  padding: 0.4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &__line {
+    height: 3px;
+    width: 100%;
+    background-color: map-get($colors, gray, 600);
+  }
+}

@@ -4,24 +4,61 @@
 .header {
   width: 100%;
 
+  @include breakpoint(smedium-only) {
+    width: 95%;
+    height: rem(80);
+    margin: 0 auto;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: min-content 1fr min-content;
+
+    > .purchases {
+      .purchases__action {
+        padding: 0.4rem;
+      }
+      .purchases__amount {
+        font-size: rem(18);
+      }
+    }
+  }
+
+  @include breakpoint(smedium-up) {
+    > .menu-hamburger,
+    > .purchases {
+      display: none;
+    }
+  }
+
   &__logo {
     height: rem(90);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(smedium-only) {
+      height: 100%;
+      > img {
+        height: rem(30);
+      }
+    }
   }
 
   &__menu-wrapper {
     width: 100%;
     height: rem(52);
 
-    $border: rem(1) solid map-get($colors, gray, 400);
+    $border: 1px solid map-get($colors, gray, 400);
     border-top: $border;
     border-bottom: $border;
+
+    @include breakpoint(smedium-only) {
+      display: none;
+    }
   }
 
   &__menu {
-    width: 90%;
+    width: 95%;
     height: 100%;
     max-width: rem(1200);
     margin: 0 auto;
@@ -30,6 +67,11 @@
     grid-template-columns: 1fr 3fr 1fr;
     justify-content: center;
     align-items: center;
+
+    @include breakpoint(medium-only) {
+      grid-template-columns: minmax(9.25rem, 1fr) 2fr minmax(rem(140), 1fr);
+      gap: 1rem;
+    }
   }
 
   &__nav {

@@ -1,0 +1,7 @@
+@use "../tools/" as *;
+
+:root {
+  @include breakpoint(medium-only) {
+    font-size: rem(14);
+  }
+}
