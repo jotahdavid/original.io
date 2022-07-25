@@ -9,6 +9,7 @@
 
   @include breakpoint(smedium-only) {
     grid-template-columns: 1fr;
+    margin-bottom: 3rem;
   }
 
   > .section-title {
@@ -77,6 +78,16 @@
       }
       .product-info__current-price {
         font-size: rem(30);
+      }
+
+      .product-info__description {
+        margin-top: 1.5rem;
+      }
+      .product-info__description__title {
+        font-size: rem(22);
+      }
+      .product-info__description__content {
+        font-size: rem(18);
       }
     }
   }
