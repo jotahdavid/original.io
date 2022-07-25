@@ -23,9 +23,9 @@ O design do layout e a proposta do teste foram retirados do [🔗 repositório d
     - [x] Recomendação de outros produtos
     - [x] Footer
   - [ ] Responsivo
-    - [ ] Header
-    - [ ] Menu hamburger
-    - [ ] Informação do produto
+    - [x] Header
+    - [x] Menu hamburger
+    - [x] Informação do produto
     - [ ] Recomendação de outros produtos
     - [ ] Footer
 - [ ] Funcionalidades
