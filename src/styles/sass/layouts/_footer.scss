@@ -13,14 +13,27 @@
 
     display: grid;
     grid-template-areas:
-      "   . social-medias              .  newsletter    ."
-      "   .         seals about-category  newsletter    ."
-      "   .             .              .  newsletter    .";
+      "....  social-medias  ..............  newsletter  ...."
+      "....  seals          about-category  newsletter  ...."
+      "....  .............  ..............  newsletter  ....";
     grid-template-columns: 5% minmax(5%, rem(180)) 3fr 1.5fr 5%;
     grid-template-rows: 25% auto auto;
     gap: rem(12);
 
     position: relative;
+
+    @include breakpoint(smedium-only) {
+      height: auto;
+      grid-template-areas:
+        "about-category"
+        "social-medias"
+        "seals"
+        "newsletter";
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      gap: rem(36);
+      margin-bottom: rem(80);
+    }
   }
 
   &__social-medias {
@@ -30,6 +43,10 @@
     justify-content: flex-start;
     align-items: center;
     gap: rem(30);
+
+    @include breakpoint(smedium-only) {
+      justify-content: center;
+    }
   }
 
   &__social-medias-icon {
@@ -55,18 +72,22 @@
     width: 90%;
     margin-right: auto;
 
-    > img:first-of-type {
+    @include breakpoint(smedium-only) {
+      margin: 0 auto;
+    }
+
+    > img:first-of-type,
+    > img:last-of-type {
       display: block;
-      max-width: rem(92);
       width: 50%;
       object-fit: cover;
     }
 
+    > img:first-of-type {
+      max-width: rem(92);
+    }
     > img:last-of-type {
-      display: block;
       max-width: rem(54);
-      width: 50%;
-      object-fit: cover;
     }
   }
 
@@ -96,6 +117,17 @@
 
     position: absolute;
     top: -35%;
+
+    @include breakpoint(smedium-only) {
+      max-width: rem(460);
+      max-height: unset;
+      width: 90%;
+      margin: 0 auto;
+      height: auto;
+      border: none;
+      position: static;
+      display: block;
+    }
   }
 
   &__down {

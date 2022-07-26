@@ -9,6 +9,7 @@
 
   @include breakpoint(smedium-only) {
     width: 95%;
+    margin-bottom: rem(80);
   }
 
   > .breadcrumb {
