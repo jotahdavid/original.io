@@ -97,6 +97,10 @@
     display: flex;
     justify-content: space-around;
     gap: rem(12);
+
+    @include breakpoint(smedium-only) {
+      display: block;
+    }
   }
 
   &__newsletter-signup {
@@ -143,7 +147,7 @@
     min-height: rem(70);
 
     display: grid;
-    grid-template-areas: ". content logo .";
+    grid-template-areas: ".... content logo ....";
     grid-template-columns: 5% 2fr 1fr 5%;
 
     align-items: center;

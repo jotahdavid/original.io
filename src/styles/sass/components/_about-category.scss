@@ -4,13 +4,76 @@
 .about-category {
   display: flex;
   flex-direction: column;
-  gap: rem(12);
+
+  @include breakpoint(smedium-up) {
+    pointer-events: none;
+  }
+
+  @include breakpoint(smedium-only) {
+    &[open] > &__summary {
+      background-color: map-get($colors, orange);
+      border-color: map-get($colors, white);
+
+      .about-category__title {
+        color: map-get($colors, white);
+      }
+
+      svg > path {
+        fill: map-get($colors, white);
+      }
+    }
+  }
+
+  &__summary {
+    margin-bottom: rem(12);
+    list-style: none;
+    cursor: pointer;
+
+    @include breakpoint(smedium-only) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0;
+
+      height: rem(60);
+      padding: 1rem;
+      border-bottom: 1px solid hsl(215, 13%, 72%);
+
+      transition: background-color 200ms ease-in;
+    }
+  }
 
   &__title {
+    display: inline;
     font-size: rem(12.5);
     font-weight: map-get($font-bold, bold);
     text-transform: uppercase;
     color: map-get($colors, blue-gray);
+
+    @include breakpoint(smedium-only) {
+      font-size: rem(20);
+      font-weight: map-get($font-bold, regular);
+      color: hsl(215, 13%, 72%);
+    }
+  }
+
+  &__plus {
+    display: block;
+    width: rem(26);
+    height: rem(26);
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      > path {
+        fill: hsl(215, 13%, 72%);
+      }
+    }
+
+    @include breakpoint(smedium-up) {
+      display: none;
+    }
   }
 
   &__links-list {
@@ -18,6 +81,12 @@
     display: flex;
     flex-direction: column;
     gap: rem(12);
+    pointer-events: all;
+
+    @include breakpoint(smedium-only) {
+      padding: 1rem;
+      gap: rem(20);
+    }
   }
 
   &__link {
@@ -44,6 +113,17 @@
 
     &:hover::after {
       transform: scaleX(1);
+    }
+
+    @include breakpoint(smedium-only) {
+      display: block;
+      font-size: rem(20);
+      padding: 1rem 0;
+
+      &::after {
+        height: 1px;
+        transform: scaleX(1);
+      }
     }
   }
 }
