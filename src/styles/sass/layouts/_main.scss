@@ -8,7 +8,7 @@
   margin-bottom: rem(140);
 
   @include breakpoint(smedium-only) {
-    width: 100%;
+    width: 95%;
   }
 
   > .breadcrumb {
@@ -32,6 +32,14 @@
 
       padding: rem(6);
       margin-bottom: rem(18);
+    }
+
+    > .carousel-horizontal {
+      @include breakpoint(smedium-only) {
+        .carousel-horizontal__product-info__colors-list {
+          gap: rem(2);
+        }
+      }
     }
   }
 }

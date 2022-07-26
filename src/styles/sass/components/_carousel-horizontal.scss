@@ -8,13 +8,22 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-bottom: rem(20);
+
+    @include breakpoint(small-only) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__product {
+    display: none;
     max-width: rem(300);
     width: 95%;
     margin: 0 auto;
     justify-self: center;
+
+    &.--visible {
+      display: block;
+    }
   }
 
   &__product-img {
