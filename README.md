@@ -16,18 +16,18 @@ O design do layout e a proposta do teste foram retirados do [🔗 repositório d
 
 ## 🚧 Projeto
 
-- [ ] Layout
+- [x] Layout
   - [x] Desktop
     - [x] Header
     - [x] Informação do produto
     - [x] Recomendação de outros produtos
     - [x] Footer
-  - [ ] Responsivo
+  - [x] Responsivo
     - [x] Header
     - [x] Menu hamburger
     - [x] Informação do produto
-    - [ ] Recomendação de outros produtos
-    - [ ] Footer
+    - [x] Recomendação de outros produtos
+    - [x] Footer
 - [ ] Funcionalidades
   - [ ] Carrosel
   - [ ] Adicionar produto
