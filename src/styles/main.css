@@ -401,6 +401,18 @@ a {
   grid-template-columns: 5% 2fr 1fr 5%;
   align-items: center;
 }
+@media (max-width: 43.6875rem) {
+  .footer__down-container {
+    min-height: 9.375rem;
+    grid-template-areas: ".... content ...." ".... logo    ....";
+    grid-template-columns: 5% 1fr 5%;
+  }
+}
+@media (max-width: 37.4375rem) {
+  .footer__down-container {
+    min-height: 12.5rem;
+  }
+}
 .footer__info {
   grid-area: content;
   max-width: 45rem;
@@ -408,10 +420,26 @@ a {
   font-size: 0.8125rem;
   color: hsl(0deg, 0%, 100%);
 }
+@media (max-width: 43.6875rem) {
+  .footer__info {
+    font-size: 1.125rem;
+  }
+}
 .footer__logo-container {
   grid-area: logo;
   display: flex;
   justify-content: flex-end;
+}
+@media (max-width: 43.6875rem) {
+  .footer__logo-container {
+    justify-content: center;
+  }
+}
+@media (max-width: 43.6875rem) {
+  .footer__logo {
+    height: 2.5rem;
+    display: block;
+  }
 }
 
 .product-view {

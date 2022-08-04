@@ -151,6 +151,18 @@
     grid-template-columns: 5% 2fr 1fr 5%;
 
     align-items: center;
+
+    @include breakpoint(smedium-only) {
+      min-height: rem(150);
+      grid-template-areas:
+        ".... content ...."
+        ".... logo    ....";
+      grid-template-columns: 5% 1fr 5%;
+    }
+
+    @include breakpoint(small-only) {
+      min-height: rem(200);
+    }
   }
 
   &__info {
@@ -160,6 +172,10 @@
     margin-left: auto;
     font-size: rem(13);
     color: map-get($colors, white);
+
+    @include breakpoint(smedium-only) {
+      font-size: rem(18);
+    }
   }
 
   &__logo-container {
@@ -167,5 +183,16 @@
 
     display: flex;
     justify-content: flex-end;
+
+    @include breakpoint(smedium-only) {
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    @include breakpoint(smedium-only) {
+      height: rem(40);
+      display: block;
+    }
   }
 }
