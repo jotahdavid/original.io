@@ -3,6 +3,7 @@
   "semi": true,
   "bracketSpacing": true,
   "endOfLine": "lf",
+  "printWidth": 120,
   "overrides": [
     {
       "files": ["*.css", "*.scss"],
