@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>original.io</title>
-    <link
-      rel="shortcut icon"
-      href="./src/images/favicon.svg"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./src/images/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./src/styles/main.css" />
   </head>
   <body>
@@ -21,22 +17,12 @@
       </button>
 
       <article class="header__logo">
-        <img
-          class="header__logo-img"
-          src="./src/images/logo-orange.png"
-          alt="Logo da Original.io"
-        />
+        <img class="header__logo-img" src="./src/images/logo-orange.png" alt="Logo da Original.io" />
       </article>
 
       <div class="purchases">
         <a class="purchases__action" href="#">
-          <svg
-            class="purchases__icon"
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg class="purchases__icon" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M11.0008 15C11.0008 16.1046 10.1054 17 9.00085 17C7.89628 17 7.00085 16.1046 7.00085 15C7.00085 13.8954 7.89628 13 9.00085 13C10.1054 13 11.0008 13.8954 11.0008 15Z"
             />
@@ -81,26 +67,14 @@
           <div class="header__search-and-purchases">
             <form class="search">
               <label class="search__label" for="search">
-                <svg
-                  class="search__icon"
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg class="search__icon" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M12.517 4C7.81321 4 4 7.8131 4 12.5169C4 17.2208 7.81321 21.0342 12.517 21.0342C14.4706 21.0342 16.2704 20.3766 17.7074 19.2705L23.1132 24.6762C23.5448 25.1079 24.2447 25.1079 24.6763 24.6762C25.1079 24.2447 25.1079 23.5448 24.6763 23.1133L19.2704 17.7073C20.3764 16.2704 21.0341 14.4706 21.0341 12.5169C21.0341 7.8131 17.2209 4 12.517 4ZM6.21053 12.5169C6.21053 9.03413 9.03404 6.21053 12.517 6.21053C16 6.21053 18.8235 9.03413 18.8235 12.5169C18.8235 16 16 18.8236 12.517 18.8236C9.03404 18.8236 6.21053 16 6.21053 12.5169Z"
                   />
                 </svg>
-                <input
-                  class="search__input"
-                  type="search"
-                  name="search"
-                  id="search"
-                  placeholder="Busca"
-                />
+                <input class="search__input" type="search" name="search" id="search" placeholder="Busca" />
               </label>
             </form>
             <div class="purchases">
@@ -143,17 +117,11 @@
         <h2 class="section-title">Rasteira Tira Dedo</h2>
 
         <article class="carousel-vertical">
-          <div class="carousel-vertical__gallery">
+          <div class="carousel-vertical__gallery carousel">
             <h3 class="carousel-vertical__title">Fotos</h3>
 
-            <div class="carousel-vertical__controller --up">
-              <svg
-                width="16"
-                height="9"
-                viewBox="0 0 16 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+            <div class="carousel-vertical__controller --up" data-slide-control="prev">
+              <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M14.6023 8.39606C14.222 8.73925 13.6438 8.73957 13.2631 8.39678L7.9991 3.65667L2.73507 8.39678C2.3544 8.73957 1.77625 8.73926 1.39595 8.39606L1.065 8.0974C0.62495 7.70028 0.62495 7.00972 1.065 6.61261L7.32914 0.959607C7.70974 0.616131 8.28846 0.61613 8.66907 0.959606L14.9332 6.61261C15.3733 7.00972 15.3733 7.70028 14.9332 8.09739L14.6023 8.39606Z"
                   fill="black"
@@ -162,40 +130,22 @@
             </div>
 
             <ul class="carousel-vertical__imgs-list">
-              <li class="carousel-vertical__imgs-list__item --active">
-                <img
-                  src="./src/images/products/prod02-small.png"
-                  alt="Product image"
-                />
+              <li class="carousel-vertical__imgs-list__item carousel-item active" data-slide-to="0">
+                <img src="./src/images/products/prod02-small.png" alt="Product image" />
               </li>
-              <li class="carousel-vertical__imgs-list__item">
-                <img
-                  src="./src/images/products/prod02-small.png"
-                  alt="Product image"
-                />
+              <li class="carousel-vertical__imgs-list__item carousel-item" data-slide-to="1">
+                <img src="./src/images/products/prod02-small.png" alt="Product image" />
               </li>
-              <li class="carousel-vertical__imgs-list__item">
-                <img
-                  src="./src/images/products/prod02-small.png"
-                  alt="Product image"
-                />
+              <li class="carousel-vertical__imgs-list__item carousel-item" data-slide-to="2">
+                <img src="./src/images/products/prod02-small.png" alt="Product image" />
               </li>
-              <li class="carousel-vertical__imgs-list__item">
-                <img
-                  src="./src/images/products/prod02-small.png"
-                  alt="Product image"
-                />
+              <li class="carousel-vertical__imgs-list__item carousel-item" data-slide-to="3">
+                <img src="./src/images/products/prod02-small.png" alt="Product image" />
               </li>
             </ul>
 
-            <div class="carousel-vertical__controller --down">
-              <svg
-                width="16"
-                height="9"
-                viewBox="0 0 16 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+            <div class="carousel-vertical__controller --down" data-slide-control="next">
+              <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M1.39579 0.625671C1.77609 0.282474 2.35424 0.28216 2.73491 0.624945L7.99894 5.36506L13.263 0.624945C13.6436 0.28216 14.2218 0.282473 14.6021 0.625671L14.933 0.924334C15.3731 1.32145 15.3731 2.01201 14.933 2.40912L8.66891 8.06212C8.2883 8.4056 7.70959 8.4056 7.32898 8.06212L1.06484 2.40912C0.624793 2.01201 0.624792 1.32145 1.06484 0.924334L1.39579 0.625671Z"
                   fill="black"
@@ -205,10 +155,7 @@
           </div>
 
           <div class="carousel-vertical__full-img-container">
-            <img
-              src="./src/images/products/prod02-large.jpeg"
-              alt="Product image"
-            />
+            <img src="./src/images/products/prod02-large.jpeg" alt="Product image" />
           </div>
         </article>
 
@@ -241,30 +188,12 @@
               <p class="product-info__installment">Ou 6x de R$ 9,20</p>
             </div>
             <div class="product-info__color-line">
-              <h3 class="product-info__option-name">
-                Cor: <span class="product-info__chosen-option">(Fucsia)</span>
-              </h3>
+              <h3 class="product-info__option-name">Cor: <span class="product-info__chosen-option">(Fucsia)</span></h3>
               <ul class="product-info__color-options">
-                <li
-                  class="product-info__color-options__item --active"
-                  data-color="#A9095E"
-                  value="fucsia"
-                ></li>
-                <li
-                  class="product-info__color-options__item"
-                  data-color="#2A5A75"
-                  value="prussian"
-                ></li>
-                <li
-                  class="product-info__color-options__item"
-                  data-color="#A14830"
-                  value="cinnamon"
-                ></li>
-                <li
-                  class="product-info__color-options__item"
-                  data-color="#000000"
-                  value="black"
-                ></li>
+                <li class="product-info__color-options__item --active" data-color="#A9095E" value="fucsia"></li>
+                <li class="product-info__color-options__item" data-color="#2A5A75" value="prussian"></li>
+                <li class="product-info__color-options__item" data-color="#A14830" value="cinnamon"></li>
+                <li class="product-info__color-options__item" data-color="#000000" value="black"></li>
               </ul>
             </div>
             <div class="product-info__size-line">
@@ -279,12 +208,7 @@
                 <li class="product-info__size-options__item" value="34">34</li>
                 <li class="product-info__size-options__item" value="35">35</li>
                 <li class="product-info__size-options__item" value="36">36</li>
-                <li
-                  class="product-info__size-options__item --active"
-                  value="37"
-                >
-                  37
-                </li>
+                <li class="product-info__size-options__item --active" value="37">37</li>
                 <li class="product-info__size-options__item" value="38">38</li>
                 <li class="product-info__size-options__item" value="39">39</li>
                 <li class="product-info__size-options__item" value="40">40</li>
@@ -296,8 +220,7 @@
             <div class="product-info__description">
               <h4 class="product-info__description__title">Descrição</h4>
               <p class="product-info__description__content">
-                Rasteira em atanado soft com tira no dedo e fechamento de
-                fivela. Possui sola sempre na cor do cabedal.
+                Rasteira em atanado soft com tira no dedo e fechamento de fivela. Possui sola sempre na cor do cabedal.
               </p>
             </div>
           </div>
@@ -310,122 +233,58 @@
           <ul class="carousel-horizontal__gallery">
             <li class="carousel-horizontal__product --visible">
               <div class="carousel-horizontal__product-img">
-                <img
-                  src="./src/images/products/prod03.jpeg"
-                  alt="Product image"
-                />
+                <img src="./src/images/products/prod03.jpeg" alt="Product image" />
               </div>
 
               <div class="carousel-horizontal__product-info">
-                <span class="carousel-horizontal__product-info__price"
-                  >R$ 204,90</span
-                >
+                <span class="carousel-horizontal__product-info__price">R$ 204,90</span>
                 <ul class="carousel-horizontal__product-info__colors-list">
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#A9095E"
-                    value="fucsia"
-                  ></li>
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#6B85C1"
-                    value="steel blue"
-                  ></li>
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#A14830"
-                    value="cinnamon"
-                  ></li>
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#000000"
-                    value="black"
-                  ></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#A9095E" value="fucsia"></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#6B85C1" value="steel blue"></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#A14830" value="cinnamon"></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#000000" value="black"></li>
                 </ul>
               </div>
             </li>
 
             <li class="carousel-horizontal__product --visible">
               <div class="carousel-horizontal__product-img">
-                <img
-                  src="./src/images/products/prod04.jpeg"
-                  alt="Product image"
-                />
+                <img src="./src/images/products/prod04.jpeg" alt="Product image" />
               </div>
 
               <div class="carousel-horizontal__product-info">
-                <span class="carousel-horizontal__product-info__price"
-                  >R$ 204,90</span
-                >
+                <span class="carousel-horizontal__product-info__price">R$ 204,90</span>
                 <ul class="carousel-horizontal__product-info__colors-list">
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#A9095E"
-                    value="fucsia"
-                  ></li>
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#6B85C1"
-                    value="steel blue"
-                  ></li>
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#A14830"
-                    value="cinnamon"
-                  ></li>
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#000000"
-                    value="black"
-                  ></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#A9095E" value="fucsia"></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#6B85C1" value="steel blue"></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#A14830" value="cinnamon"></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#000000" value="black"></li>
                 </ul>
               </div>
             </li>
 
             <li class="carousel-horizontal__product">
               <div class="carousel-horizontal__product-img">
-                <img
-                  src="./src/images/products/prod02-large.jpeg"
-                  alt="Product image"
-                />
+                <img src="./src/images/products/prod02-large.jpeg" alt="Product image" />
               </div>
 
               <div class="carousel-horizontal__product-info">
-                <span class="carousel-horizontal__product-info__price"
-                  >R$ 204,90</span
-                >
+                <span class="carousel-horizontal__product-info__price">R$ 204,90</span>
                 <ul class="carousel-horizontal__product-info__colors-list"></ul>
               </div>
             </li>
 
             <li class="carousel-horizontal__product">
               <div class="carousel-horizontal__product-img">
-                <img
-                  src="./src/images/products/prod01.jpeg"
-                  alt="Product image"
-                />
+                <img src="./src/images/products/prod01.jpeg" alt="Product image" />
               </div>
 
               <div class="carousel-horizontal__product-info">
-                <span class="carousel-horizontal__product-info__price"
-                  >R$ 204,90</span
-                >
+                <span class="carousel-horizontal__product-info__price">R$ 204,90</span>
                 <ul class="carousel-horizontal__product-info__colors-list">
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#6B85C1"
-                    value="steel blue"
-                  ></li>
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#A14830"
-                    value="cinnamon"
-                  ></li>
-                  <li
-                    class="carousel-horizontal__product-info__color"
-                    data-color="#000000"
-                    value="black"
-                  ></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#6B85C1" value="steel blue"></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#A14830" value="cinnamon"></li>
+                  <li class="carousel-horizontal__product-info__color" data-color="#000000" value="black"></li>
                 </ul>
               </div>
             </li>
@@ -473,11 +332,7 @@
     <footer class="footer">
       <section class="footer__top">
         <div class="footer__social-medias">
-          <a
-            class="footer__social-medias-link"
-            href="https://www.facebook.com/original.io"
-            target="__blank"
-          >
+          <a class="footer__social-medias-link" href="https://www.facebook.com/original.io" target="__blank">
             <svg
               class="footer__social-medias-icon"
               width="12"
@@ -495,11 +350,7 @@
             </svg>
           </a>
 
-          <a
-            class="footer__social-medias-link"
-            href="https://www.instagram.com/original_io/"
-            target="__blank"
-          >
+          <a class="footer__social-medias-link" href="https://www.instagram.com/original_io/" target="__blank">
             <svg
               class="footer__social-medias-icon"
               width="24"
@@ -523,11 +374,7 @@
             </svg>
           </a>
 
-          <a
-            class="footer__social-medias-link"
-            href="https://www.pinterest.com/"
-            target="__blank"
-          >
+          <a class="footer__social-medias-link" href="https://www.pinterest.com/" target="__blank">
             <svg
               class="footer__social-medias-icon"
               width="25"
@@ -545,10 +392,7 @@
         </div>
 
         <div class="footer__seals">
-          <img
-            src="./src/images/seals/vtex-pci-200.png"
-            alt="Certificado da Vtex"
-          />
+          <img src="./src/images/seals/vtex-pci-200.png" alt="Certificado da Vtex" />
           <img src="./src/images/seals/selo-ebit.jpeg" alt="Selo ebit" />
         </div>
         <div class="footer__about-category">
@@ -556,13 +400,7 @@
             <summary class="about-category__summary">
               <h3 class="about-category__title">Institucional</h3>
               <span class="about-category__plus">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M22.1673 15.1669H15.1673V22.1669H12.834V15.1669H5.83398V12.8336H12.834V5.83359H15.1673V12.8336H22.1673V15.1669Z"
                     fill="black"
@@ -589,13 +427,7 @@
             <summary class="about-category__summary">
               <h3 class="about-category__title">Informações</h3>
               <span class="about-category__plus">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M22.1673 15.1669H15.1673V22.1669H12.834V15.1669H5.83398V12.8336H12.834V5.83359H15.1673V12.8336H22.1673V15.1669Z"
                     fill="black"
@@ -613,9 +445,7 @@
               </li>
 
               <li class="about-category__links-list__item">
-                <a class="about-category__link" href="#"
-                  >Cuidados com o Produto</a
-                >
+                <a class="about-category__link" href="#">Cuidados com o Produto</a>
               </li>
             </ul>
           </details>
@@ -624,13 +454,7 @@
             <summary class="about-category__summary">
               <h3 class="about-category__title">Conheça</h3>
               <span class="about-category__plus">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M22.1673 15.1669H15.1673V22.1669H12.834V15.1669H5.83398V12.8336H12.834V5.83359H15.1673V12.8336H22.1673V15.1669Z"
                     fill="black"
@@ -640,15 +464,11 @@
             </summary>
             <ul class="about-category__links-list">
               <li class="about-category__links-list__item">
-                <a class="about-category__link" href="#"
-                  >Franquias e Multimarcas</a
-                >
+                <a class="about-category__link" href="#">Franquias e Multimarcas</a>
               </li>
 
               <li class="about-category__links-list__item">
-                <a class="about-category__link" href="#"
-                  >Trabalhe com a Gente</a
-                >
+                <a class="about-category__link" href="#">Trabalhe com a Gente</a>
               </li>
 
               <li class="about-category__links-list__item">
@@ -661,28 +481,14 @@
           <form class="newsletter-signup" autocomplete="off">
             <h3 class="newsletter-signup__title">Assine nossa news</h3>
             <label class="newsletter-signup__label" for="newsletter-name">
-              <input
-                class="newsletter-signup__input"
-                id="newsletter-name"
-                placeholder="Nome"
-                type="text"
-              />
+              <input class="newsletter-signup__input" id="newsletter-name" placeholder="Nome" type="text" />
               <span class="newsletter-signup__placeholder">Nome</span>
             </label>
             <label class="newsletter-signup__label" for="newsletter-email">
-              <input
-                class="newsletter-signup__input"
-                id="newsletter-email"
-                placeholder="E-mail"
-                type="email"
-              />
+              <input class="newsletter-signup__input" id="newsletter-email" placeholder="E-mail" type="email" />
               <span class="newsletter-signup__placeholder">E-mail</span>
             </label>
-            <input
-              class="newsletter-signup__button"
-              type="submit"
-              value="Enviar"
-            />
+            <input class="newsletter-signup__button" type="submit" value="Enviar" />
           </form>
         </article>
       </section>
@@ -690,17 +496,12 @@
       <section class="footer__down">
         <div class="footer__down-container">
           <div class="footer__info">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            molestie massa in nunc condimentum, vel placerat lacus pulvinar.
-            Suspendisse vel nisl eu tortor feugiat tempus vel in tortor. Nunc
-            semper leo nec tellus gravida faucibus.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie massa in nunc condimentum, vel
+            placerat lacus pulvinar. Suspendisse vel nisl eu tortor feugiat tempus vel in tortor. Nunc semper leo nec
+            tellus gravida faucibus.
           </div>
           <div class="footer__logo-container">
-            <img
-              class="footer__logo"
-              src="./src/images/logo-white.png"
-              alt="Logo da Original.io"
-            />
+            <img class="footer__logo" src="./src/images/logo-white.png" alt="Logo da Original.io" />
           </div>
         </div>
       </section>
