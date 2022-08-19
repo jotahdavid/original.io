@@ -2,8 +2,8 @@ function rem(px) {
   return px / 16;
 }
 
-const smallOnlyMedia = window.matchMedia(`(max-width: ${rem(599)}rem)`);
-const smediumOnlyMedia = window.matchMedia(`(max-width: ${rem(699)}rem)`);
+export const smallOnlyMedia = window.matchMedia(`(max-width: ${rem(599)}rem)`);
+export const smediumOnlyMedia = window.matchMedia(`(max-width: ${rem(699)}rem)`);
 
 function changeImagesPerPageOfCarousel(matches) {
   const $gallery = document.querySelector('.carousel-horizontal');
