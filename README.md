@@ -29,7 +29,7 @@ O design do layout e a proposta do teste foram retirados do [🔗 repositório d
     - [x] Recomendação de outros produtos
     - [x] Footer
 - [ ] Funcionalidades
-  - [ ] Carrosel
+  - [x] Carrosel
   - [ ] Adicionar produto
   - [ ] Carrinho/Sacola
   - [ ] Remover produto
