@@ -951,10 +951,6 @@ a {
   justify-self: center;
 }
 
-.carousel-horizontal__product.visible {
-  display: block;
-}
-
 .carousel-horizontal__product-img {
   cursor: pointer;
   position: relative;
@@ -1005,6 +1001,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+  user-select: none;
 }
 
 .carousel-horizontal__controllers__controller {

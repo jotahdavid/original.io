@@ -1,5 +1,11 @@
-const SELECTOR_LIST = '.gallery-list';
+const SELECTOR_WRAPPER = '.gallery-wrapper';
 const SELECTOR_ITEM = '.gallery-item';
+
+const execute = (fn, ...args) => {
+  if (typeof fn === 'function') {
+    fn(...args);
+  }
+};
 
 /**
  * @typedef {{ perPage?: number; onChangePage?: function; }} GalleryConfigs
@@ -16,24 +22,38 @@ class Gallery {
       throw new Error(`${selector} element doesn not exists!`);
     }
     this._element = element;
-    this._container = this._element.querySelector(SELECTOR_LIST);
+    this._wrapper = element.querySelector(SELECTOR_WRAPPER);
+
     this._isSliding = false;
     this._page = 0;
-    this._itemPerPage = config.perPage ?? 4;
-    this._element.style.setProperty('--item-per-page', this._itemPerPage);
+
     this._changePageListener = config.onChangePage ?? null;
+    this.itemPerPage = config.perPage ?? 4;
+  }
+
+  set itemPerPage(value) {
+    this._itemPerPage = value;
+    this._element.style.setProperty('--item-per-page', value);
   }
 
   async next() {
-    const distance = Math.round((this._container.scrollWidth / this.lastPage) * (this._page + 1));
+    const distance = this.getDistance(this._page + 1);
     await this.scroll(distance);
-    this.changePage();
+    this.updatePage();
   }
 
   async prev() {
-    const distance = Math.round((this._container.scrollWidth / this.lastPage) * (this._page - 1));
+    const distance = this.getDistance(this._page - 1);
     await this.scroll(distance);
-    this.changePage();
+    this.updatePage();
+  }
+
+  /**
+   * @param {number} value
+   * @returns {number}
+   */
+  getDistance(value = 0) {
+    return Math.round((this._wrapper.scrollWidth / (this._lastPage + 1)) * value);
   }
 
   /**
@@ -41,16 +61,16 @@ class Gallery {
    * @returns {Promise<void>}
    */
   scroll(distance) {
-    if (this._isSliding || distance < 0 || distance > this._container.scrollWidth - this._container.clientWidth) {
+    if (this._isSliding || distance < 0 || distance > this.getDistance(this._lastPage)) {
       return Promise.resolve();
     }
 
-    this._container.scrollLeft = distance;
+    this._wrapper.scrollLeft = distance;
     this._isSliding = true;
 
     return new Promise((resolve) => {
       const interval = setInterval(() => {
-        if (this._container.scrollLeft === distance) {
+        if (this._wrapper.scrollLeft === distance) {
           this._isSliding = false;
           clearInterval(interval);
           resolve();
@@ -59,11 +79,11 @@ class Gallery {
     });
   }
 
-  changePage() {
-    for (let i = 0; i < this.lastPage; i++) {
-      if (Math.round((this._container.scrollWidth / this.lastPage) * i) === this._container.scrollLeft) {
+  updatePage() {
+    for (let i = 0; i <= this._lastPage; i++) {
+      if (this.getDistance(i) === this._wrapper.scrollLeft) {
         this._page = i;
-        this.execute(this._changePageListener, i + 1, this.lastPage);
+        execute(this._changePageListener, i + 1, this._lastPage + 1);
       }
     }
   }
@@ -71,8 +91,8 @@ class Gallery {
   /**
    * @returns {number}
    */
-  get lastPage() {
-    return this.getItems().length / this._itemPerPage;
+  get _lastPage() {
+    return this.getItems().length / this._itemPerPage - 1;
   }
 
   /**
@@ -82,15 +102,26 @@ class Gallery {
     return Array.from(this._element.querySelectorAll(SELECTOR_ITEM));
   }
 
+  /**
+   * @param {function} fn
+   */
+  onChangePage(fn) {
+    this._changePageListener = fn;
+  }
+
   addEventListener() {
-    this.changePage();
+    this.updatePage();
 
     const gallery = this;
     const $controls = this._element.querySelectorAll('[data-gallery-control]');
 
-    $controls.forEach(($control) => $control.addEventListener('click', handleControlClick));
+    $controls.forEach((item) => {
+      item.addEventListener('click', handleControlClick);
+    });
 
-    function handleControlClick() {
+    function handleControlClick(event) {
+      event.preventDefault();
+
       const action = this.getAttribute('data-gallery-control');
 
       if (action === 'next') {
@@ -99,23 +130,6 @@ class Gallery {
       }
 
       gallery.prev();
-    }
-  }
-
-  /**
-   * @param {function} fn
-   */
-  onChangePage(fn) {
-    this._changePageListener = fn;
-  }
-
-  /**
-   * @param {function} fn
-   * @param  {...unknown} args
-   */
-  execute(fn, ...args) {
-    if (typeof fn === 'function') {
-      fn(...args);
     }
   }
 }

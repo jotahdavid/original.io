@@ -16,15 +16,10 @@
   }
 
   &__product {
-    // display: none;
     max-width: rem(300);
     width: 95%;
     margin: 0 auto;
     justify-self: center;
-
-    &.visible {
-      display: block;
-    }
   }
 
   &__product-img {
@@ -79,6 +74,7 @@
     align-items: center;
     justify-content: center;
     gap: rem(4);
+    user-select: none;
 
     &__controller {
       display: flex;
