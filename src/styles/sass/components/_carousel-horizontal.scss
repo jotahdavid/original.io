@@ -5,23 +5,24 @@
   width: 100%;
 
   &__gallery {
+    overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, calc(100% / var(--item-per-page, 4)));
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / var(--item-per-page, 4));
     margin-bottom: rem(20);
 
-    @include breakpoint(small-only) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    scroll-behavior: smooth;
   }
 
   &__product {
-    display: none;
+    // display: none;
     max-width: rem(300);
     width: 95%;
     margin: 0 auto;
     justify-self: center;
 
-    &.--visible {
+    &.visible {
       display: block;
     }
   }

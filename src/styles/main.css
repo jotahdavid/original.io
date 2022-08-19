@@ -935,25 +935,23 @@ a {
 }
 
 .carousel-horizontal__gallery {
+  overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, calc(100% / var(--item-per-page, 4)));
+  grid-auto-flow: column;
+  grid-auto-columns: calc(100% / var(--item-per-page, 4));
   margin-bottom: 1.25rem;
+  scroll-behavior: smooth;
 }
 
-@media (max-width: 37.4375rem) {
-  .carousel-horizontal__gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 .carousel-horizontal__product {
-  display: none;
   max-width: 18.75rem;
   width: 95%;
   margin: 0 auto;
   justify-self: center;
 }
 
-.carousel-horizontal__product.--visible {
+.carousel-horizontal__product.visible {
   display: block;
 }
 

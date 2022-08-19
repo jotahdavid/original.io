@@ -6,15 +6,9 @@ const smallOnlyMedia = window.matchMedia(`(max-width: ${rem(599)}rem)`);
 const smediumOnlyMedia = window.matchMedia(`(max-width: ${rem(699)}rem)`);
 
 function changeImagesPerPageOfCarousel(matches) {
-  const $products = document.querySelectorAll('.carousel-horizontal__product');
+  const $gallery = document.querySelector('.carousel-horizontal');
   const productPerPage = matches ? 2 : 4;
-
-  $products.forEach(($product, index) => {
-    if (index < productPerPage) {
-      return $product.classList.add('--visible');
-    }
-    $product.classList.remove('--visible');
-  });
+  $gallery.style.setProperty('--item-per-page', productPerPage);
 }
 
 function setAboutCategoryIsOpen(matches) {
