@@ -15,6 +15,13 @@
 
     > path {
       fill: map-get($colors, blue);
+      transition: fill 200ms ease;
+    }
+  }
+
+  &:hover {
+    > svg > path {
+      fill: lighten(map-get($colors, blue), 16);
     }
   }
 }

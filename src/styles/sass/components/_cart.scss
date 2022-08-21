@@ -159,10 +159,11 @@
     cursor: pointer;
     height: rem(42);
 
+    font-family: $montserrat;
     text-transform: uppercase;
     color: map-get($colors, white);
 
-    transition: background-color 300ms ease;
+    transition: background-color 200ms ease;
 
     &:hover {
       background-color: darken(map-get($colors, green), 8);

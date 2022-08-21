@@ -10,4 +10,15 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
+
+  &.show-lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: rem(700);
+  }
+
+  .cart {
+    display: none;
+  }
 }

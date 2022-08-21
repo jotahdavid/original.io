@@ -560,6 +560,17 @@ a {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.portal.show-lightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 43.75rem;
+}
+
+.portal .cart {
+  display: none;
+}
+
 .categories {
   width: 100%;
   height: 100%;
@@ -1385,11 +1396,6 @@ a {
   background-color: hsl(15deg, 61%, 66%);
 }
 
-body {
-  /* temporary */
-  overflow: hidden;
-}
-
 .cart {
   position: absolute;
   top: 0;
@@ -1411,25 +1417,10 @@ body {
 }
 
 .cart__close {
-  border: none;
-  background-color: transparent;
-  width: 2.625rem;
-  height: 2.625rem;
-  padding: 6px;
-  cursor: pointer;
   position: absolute;
   top: 0;
   right: 0;
   transform: translateX(-25%) translateY(25%);
-}
-
-.cart__close > svg {
-  width: 100%;
-  height: 100%;
-}
-
-.cart__close > svg > path {
-  fill: hsl(223deg, 31%, 52%);
 }
 
 .cart__title {
@@ -1559,9 +1550,10 @@ body {
   border-radius: 0.25rem;
   cursor: pointer;
   height: 2.625rem;
+  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   color: hsl(0deg, 0%, 100%);
-  transition: background-color 300ms ease;
+  transition: background-color 200ms ease;
 }
 
 .cart__cta:hover {
@@ -1597,6 +1589,111 @@ body {
 
 .quantity-control__button > svg > path {
   fill: hsl(215deg, 13%, 72%);
+}
+
+.lightbox__confirm, .lightbox__continue, .close-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.close-button {
+  width: 2.625rem;
+  height: 2.625rem;
+  padding: 6px;
+}
+
+.close-button > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.close-button > svg > path {
+  fill: hsl(223deg, 31%, 52%);
+  transition: fill 200ms ease;
+}
+
+.close-button:hover > svg > path {
+  fill: #94a2c7;
+}
+
+body {
+  /* temporary */
+  overflow: hidden;
+}
+
+.lightbox {
+  max-width: 27.8125rem;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  background-color: hsl(0deg, 0%, 100%);
+  position: relative;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.lightbox__wrapper {
+  max-width: 18.75rem;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 3.125rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox__image {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 21.875rem;
+}
+
+.lightbox__message {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.375rem;
+  color: hsl(15deg, 61%, 66%);
+  line-height: 100%;
+  margin: 1rem 0;
+}
+
+.lightbox__confirm {
+  background-color: hsl(166deg, 49%, 38%);
+  width: 100%;
+  height: 3.25rem;
+  border-radius: 0.25rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 100%);
+  transition: background-color 200ms ease;
+  margin-bottom: 0.75rem;
+}
+
+.lightbox__confirm:hover {
+  background-color: #277260;
+}
+
+.lightbox__continue {
+  padding: 0.375rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+  text-decoration: underline;
+  color: #758295;
+  transition: color 200ms ease;
+}
+
+.lightbox__continue:hover {
+  color: #929cab;
 }
 
 /*# sourceMappingURL=main.css.map */

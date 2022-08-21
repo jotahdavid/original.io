@@ -106,7 +106,7 @@
       </article>
     </header>
 
-    <div class="portal">
+    <div class="portal show-lightbox">
       <aside class="cart">
         <header class="cart__header">
           <button class="cart__close close-button">
@@ -120,6 +120,7 @@
           <h2 class="cart__title">Sacola</h2>
           <p class="cart__amount"><span>5</span> itens</p>
         </header>
+
         <ul class="cart__item-list">
           <li class="cart__item">
             <img class="cart__item__image" src="./src/images/products/prod02-small.png" alt="Preview do produto" />
@@ -303,6 +304,26 @@
           <button class="cart__cta">Finalizar compra</button>
         </footer>
       </aside>
+
+      <section class="lightbox">
+        <button class="lightbox__close close-button">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M22.1673 7.47859L20.5223 5.83359L14.0007 12.3553L7.47898 5.83359L5.83398 7.47859L12.3557 14.0002L5.83398 20.5219L7.47898 22.1669L14.0007 15.6452L20.5223 22.1669L22.1673 20.5219L15.6457 14.0002L22.1673 7.47859Z"
+              fill="black"
+            />
+          </svg>
+        </button>
+        <div class="lightbox__wrapper">
+          <img class="lightbox__image" src="./src/images/products/prod02-large.jpeg" alt="Product image" />
+          <h3 class="lightbox__message">
+            Produto adicionado<br />
+            com sucesso!
+          </h3>
+          <button class="lightbox__confirm">Finalizar compra</button>
+          <button class="lightbox__continue">Continuar comprando</button>
+        </div>
+      </section>
     </div>
 
     <main class="main">
