@@ -1,11 +1,6 @@
 @use "../tools/" as *;
 @use "../settings/" as *;
 
-body {
-  /* temporary */
-  overflow: hidden;
-}
-
 .cart {
   position: absolute;
   top: 0;
@@ -28,26 +23,10 @@ body {
   }
 
   &__close {
-    border: none;
-    background-color: transparent;
-    width: rem(42);
-    height: rem(42);
-    padding: 6px;
-    cursor: pointer;
-
     position: absolute;
     top: 0;
     right: 0;
     transform: translateX(-25%) translateY(25%);
-
-    > svg {
-      width: 100%;
-      height: 100%;
-
-      > path {
-        fill: map-get($colors, blue);
-      }
-    }
   }
 
   &__title {
