@@ -550,6 +550,16 @@ a {
     font-size: 1.125rem;
   }
 }
+.portal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .categories {
   width: 100%;
   height: 100%;
@@ -1373,6 +1383,167 @@ a {
 .gallery__bullets__item.--current {
   border-color: transparent;
   background-color: hsl(15deg, 61%, 66%);
+}
+
+body {
+  /* temporary */
+  overflow: hidden;
+}
+
+.cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32.8125rem;
+  height: 100%;
+  padding: 0 1.25rem;
+  background-color: hsl(0deg, 0%, 100%);
+  z-index: 2;
+}
+
+.cart__header {
+  width: 100%;
+  padding-top: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid hsl(0deg, 0%, 80%);
+}
+
+.cart__close {
+  border: none;
+  background-color: transparent;
+  width: 2.625rem;
+  height: 2.625rem;
+  padding: 6px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(-50%);
+}
+
+.cart__close > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cart__close > svg > path {
+  fill: hsl(223deg, 31%, 52%);
+}
+
+.cart__title {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+  color: hsl(15deg, 61%, 66%);
+  margin-bottom: 0.25rem;
+}
+
+.cart__amount {
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  color: hsl(215deg, 13%, 72%);
+}
+
+.cart__amount span {
+  font-family: inherit;
+}
+
+.cart__item-list {
+  width: 100%;
+}
+
+.cart__item {
+  width: 100%;
+  height: 5rem;
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(2.875rem, 0.6fr) repeat(2, 1fr) min-content;
+  grid-template-rows: 100%;
+  gap: 0.5rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.cart__item__image {
+  display: block;
+  height: 100%;
+}
+
+.cart__item__name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 13%);
+  line-height: 122%;
+}
+
+.cart__item__price {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 146%;
+}
+
+.cart__item__clear {
+  border: none;
+  background-color: transparent;
+  width: 1.875rem;
+  height: 1.875rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 300ms ease;
+}
+
+.cart__item__clear > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cart__item__clear > svg > path {
+  fill: hsl(215deg, 13%, 72%);
+  transition: fill 200ms ease;
+}
+
+.cart__item__clear:hover {
+  background-color: hsl(15deg, 61%, 66%);
+}
+
+.cart__item__clear:hover > svg > path {
+  fill: hsl(0deg, 0%, 100%);
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quantity-control__value {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(223deg, 31%, 52%);
+}
+
+.quantity-control__button {
+  border: none;
+  background-color: transparent;
+  width: 1.625rem;
+  height: 1.625rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.quantity-control__button > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.quantity-control__button > svg > path {
+  fill: hsl(215deg, 13%, 72%);
 }
 
 /*# sourceMappingURL=main.css.map */

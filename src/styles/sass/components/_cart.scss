@@ -1,0 +1,132 @@
+@use "../tools/" as *;
+@use "../settings/" as *;
+
+body {
+  /* temporary */
+  overflow: hidden;
+}
+
+.cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: rem(525);
+  height: 100%;
+  padding: 0 rem(20);
+  background-color: map-get($colors, white);
+  z-index: 2;
+
+  &__header {
+    width: 100%;
+    padding-top: rem(20);
+    padding-bottom: rem(12);
+    border-bottom: 1px solid hsl(0deg, 0%, 80%);
+  }
+
+  &__close {
+    border: none;
+    background-color: transparent;
+    width: rem(42);
+    height: rem(42);
+    padding: 6px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(-50%);
+
+    > svg {
+      width: 100%;
+      height: 100%;
+
+      > path {
+        fill: map-get($colors, blue);
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: $montserrat;
+    font-weight: map-get($font-bold, regular);
+    font-size: rem(28);
+    color: map-get($colors, orange);
+    margin-bottom: rem(4);
+  }
+
+  &__amount {
+    text-transform: capitalize;
+    font-family: $montserrat;
+    font-size: rem(20);
+    color: map-get($colors, blue-gray);
+
+    span {
+      font-family: inherit;
+    }
+  }
+
+  &__item-list {
+    width: 100%;
+  }
+
+  &__item {
+    width: 100%;
+    height: rem(80);
+    margin-top: rem(20);
+    display: grid;
+    grid-template-columns: minmax(rem(46), 0.6fr) repeat(2, 1fr) min-content;
+    grid-template-rows: 100%;
+    gap: rem(8);
+    justify-items: center;
+    align-items: center;
+
+    &__image {
+      display: block;
+      height: 100%;
+    }
+
+    &__name {
+      font-family: $montserrat;
+      font-weight: map-get($font-bold, regular);
+      font-size: rem(16);
+      color: hsl(0, 0%, 13%);
+      line-height: 122%;
+    }
+
+    &__price {
+      font-family: $montserrat;
+      font-weight: map-get($font-bold, bold);
+      font-size: rem(18);
+      line-height: 146%;
+    }
+
+    &__clear {
+      border: none;
+      background-color: transparent;
+      width: rem(30);
+      height: rem(30);
+      padding: rem(4);
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 300ms ease;
+
+      > svg {
+        width: 100%;
+        height: 100%;
+        > path {
+          fill: map-get($colors, blue-gray);
+          transition: fill 200ms ease;
+        }
+      }
+
+      &:hover {
+        background-color: map-get($colors, orange);
+        > svg > path {
+          fill: map-get($colors, white);
+        }
+      }
+    }
+  }
+}
