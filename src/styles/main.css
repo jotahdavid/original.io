@@ -1720,6 +1720,12 @@ a {
   height: 2.25rem;
 }
 
+@media (max-width: 37.4375rem) {
+  .lightbox__close {
+    width: 3.375rem;
+    height: 3.375rem;
+  }
+}
 .lightbox__wrapper {
   max-width: 18.75rem;
   width: 80%;

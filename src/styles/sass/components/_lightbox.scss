@@ -17,6 +17,11 @@
 
     width: rem(36);
     height: rem(36);
+
+    @include breakpoint(small-only) {
+      width: rem(54);
+      height: rem(54);
+    }
   }
 
   &__wrapper {
