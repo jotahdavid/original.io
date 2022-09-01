@@ -3,22 +3,30 @@
 
 .portal {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 1;
+  overflow-y: auto;
 
+  display: flex;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
 
-  &.show-lightbox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: rem(700);
-  }
-
+  .lightbox,
   .cart {
     display: none;
+  }
+
+  &.show-lightbox {
+    padding: 1rem 0;
+    .lightbox {
+      display: block;
+    }
+  }
+
+  &.show-cart {
+    .cart {
+      display: flex;
+    }
   }
 }

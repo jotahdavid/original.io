@@ -10,7 +10,7 @@ body {
 .lightbox {
   max-width: rem(445);
   width: 90%;
-  margin: 0 auto;
+  margin: auto;
   border-radius: rem(4);
   background-color: map-get($colors, white);
   position: relative;

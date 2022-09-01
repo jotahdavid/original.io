@@ -552,23 +552,30 @@ a {
 }
 .portal {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: 1;
+  overflow-y: auto;
+  display: flex;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.portal.show-lightbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 43.75rem;
-}
-
+.portal .lightbox,
 .portal .cart {
   display: none;
+}
+
+.portal.show-lightbox {
+  padding: 1rem 0;
+}
+
+.portal.show-lightbox .lightbox {
+  display: block;
+}
+
+.portal.show-cart .cart {
+  display: flex;
 }
 
 .categories {
@@ -1625,7 +1632,7 @@ body {
 .lightbox {
   max-width: 27.8125rem;
   width: 90%;
-  margin: 0 auto;
+  margin: auto;
   border-radius: 0.25rem;
   background-color: hsl(0deg, 0%, 100%);
   position: relative;
