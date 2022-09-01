@@ -2,11 +2,6 @@
 @use "../settings/" as *;
 @use "../trumps/" as *;
 
-body {
-  /* temporary */
-  overflow: hidden;
-}
-
 .lightbox {
   max-width: rem(445);
   width: 90%;

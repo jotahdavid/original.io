@@ -1,0 +1,12 @@
+.no-scroll-y {
+  overflow-y: hidden;
+}
+
+.no-scroll-x {
+  overflow-x: hidden;
+}
+
+.no-scroll {
+  @extend .no-scroll-y;
+  @extend .no-scroll-x;
+}

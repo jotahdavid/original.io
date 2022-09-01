@@ -7,14 +7,18 @@
   z-index: 1;
   overflow-y: auto;
 
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+  display: none;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 
   .lightbox,
   .cart {
     display: none;
+  }
+
+  &[class*="show"] {
+    display: flex;
   }
 
   &.show-lightbox {
