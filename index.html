@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="./src/images/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./src/styles/main.css" />
   </head>
-  <body class="no-scroll">
+  <body>
     <header class="header">
       <button class="menu-hamburger">
         <div class="menu-hamburger__line"></div>
@@ -21,7 +21,7 @@
       </article>
 
       <div class="purchases">
-        <a class="purchases__action" href="#">
+        <button class="purchases__action" href="#">
           <svg class="purchases__icon" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M11.0008 15C11.0008 16.1046 10.1054 17 9.00085 17C7.89628 17 7.00085 16.1046 7.00085 15C7.00085 13.8954 7.89628 13 9.00085 13C10.1054 13 11.0008 13.8954 11.0008 15Z"
@@ -36,7 +36,7 @@
             />
           </svg>
           <span class="purchases__amount">0</span>
-        </a>
+        </button>
       </div>
 
       <article class="header__menu-wrapper">
@@ -78,7 +78,7 @@
               </label>
             </form>
             <div class="purchases">
-              <a class="purchases__action" href="#">
+              <button class="purchases__action" href="#">
                 <svg
                   class="purchases__icon"
                   width="28"
@@ -99,14 +99,14 @@
                   />
                 </svg>
                 <span class="purchases__amount">0</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </article>
     </header>
 
-    <div class="portal show-lightbox">
+    <div class="portal">
       <aside class="cart">
         <header class="cart__header">
           <button class="cart__close close-button">

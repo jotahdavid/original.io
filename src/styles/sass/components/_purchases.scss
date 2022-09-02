@@ -1,8 +1,11 @@
 @use "../tools/" as *;
 @use "../settings/" as *;
+@use "../trumps/" as *;
 
 .purchases {
   &__action {
+    @extend %button-reset;
+
     width: 100%;
     height: 100%;
 

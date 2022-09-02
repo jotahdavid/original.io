@@ -559,15 +559,17 @@ a {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.portal[class*=show] {
+  display: flex;
+  animation: fade-in 200ms ease;
 }
 
 .portal .lightbox,
 .portal .cart {
   display: none;
-}
-
-.portal[class*=show] {
-  display: flex;
 }
 
 .portal.show-lightbox {
@@ -576,12 +578,34 @@ a {
 
 .portal.show-lightbox .lightbox {
   display: block;
+  animation: fade-in 300ms ease;
+}
+
+.portal.show-cart {
+  overflow-x: hidden;
 }
 
 .portal.show-cart .cart {
   display: flex;
+  animation: slide 400ms ease;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(80%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .categories {
   width: 100%;
   height: 100%;
@@ -668,6 +692,20 @@ a {
 .search__input:not(:placeholder-shown), .search__input:focus {
   width: 100%;
   border-bottom-color: hsl(0deg, 0%, 41%);
+}
+
+.lightbox__confirm, .lightbox__continue, .close-button, .purchases__action {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.no-scroll-y, .no-scroll {
+  overflow-y: hidden;
+}
+
+.no-scroll-x, .no-scroll {
+  overflow-x: hidden;
 }
 
 .purchases__action {
@@ -1661,20 +1699,6 @@ a {
 
 .quantity-control__button > svg > path {
   fill: hsl(215deg, 13%, 72%);
-}
-
-.lightbox__confirm, .lightbox__continue, .close-button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.no-scroll-y, .no-scroll {
-  overflow-y: hidden;
-}
-
-.no-scroll-x, .no-scroll {
-  overflow-x: hidden;
 }
 
 .close-button {
