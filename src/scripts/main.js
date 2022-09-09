@@ -30,6 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   $addItemBtn.addEventListener('click', () => {
     $portal.classList.add('show-lightbox');
+    document.body.classList.add('no-scroll');
   });
 
   const $lightbox = document.querySelector('.lightbox');
@@ -40,14 +41,16 @@ window.addEventListener('DOMContentLoaded', () => {
   [$confirmBtn, $continueBtn, $closeBtn].forEach((item) => {
     item.addEventListener('click', () => {
       $portal.classList.remove('show-lightbox');
+      document.body.classList.remove('no-scroll');
     });
   });
 
   const $purchases = document.querySelectorAll('.purchases');
 
-  $purchases.forEach((item) => {
+  [$confirmBtn, ...$purchases].forEach((item) => {
     item.addEventListener('click', () => {
       $portal.classList.add('show-cart');
+      document.body.classList.add('no-scroll');
     });
   });
 
@@ -56,5 +59,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   $closeCartBtn.addEventListener('click', () => {
     $portal.classList.remove('show-cart');
+    document.body.classList.remove('no-scroll');
   });
 })();
