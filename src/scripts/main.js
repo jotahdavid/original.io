@@ -2,8 +2,8 @@ import Carousel from './components/Carousel/index.js';
 import Gallery from './components/Gallery/index.js';
 
 import { addMatchMediaEvents, smallOnlyMedia } from './matchMedia.js';
-import { addCartEvents } from './events/cart.js';
-import { addLightboxEvents } from './events/lightbox.js';
+import { addCartEvents } from './events/CartEvents.js';
+import { addLightboxEvents } from './events/LightboxEvents.js';
 
 const carousel = new Carousel('.carousel-vertical__gallery');
 const gallery = new Gallery('.carousel-horizontal', { perPage: 4, onChangePage: handleChangePage });

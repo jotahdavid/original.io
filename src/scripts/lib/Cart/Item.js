@@ -14,6 +14,10 @@ class Item {
     this.amount = Math.floor(amount);
   }
 
+  get price() {
+    return this._price / 100;
+  }
+
   /**
    * @param {number} value
    */
