@@ -21,8 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
   addMatchMediaEvents();
   window.addEventListener('resize', () => updateGallery(smallOnlyMedia.matches));
   updateGallery(smallOnlyMedia.matches);
-  carousel.addEventListener();
-  gallery.addEventListener();
+  carousel.addEvents();
+  gallery.addEvents();
 });
 
 (function () {

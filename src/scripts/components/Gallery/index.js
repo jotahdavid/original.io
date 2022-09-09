@@ -109,7 +109,7 @@ class Gallery {
     this._changePageListener = fn;
   }
 
-  addEventListener() {
+  addEvents() {
     this.updatePage();
 
     const gallery = this;

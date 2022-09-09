@@ -102,7 +102,7 @@ class Carousel {
     this.slide('prev');
   }
 
-  addEventListener() {
+  addEvents() {
     const carousel = this;
 
     const $slideTo = Array.from(this._element.querySelectorAll('[data-slide-to]'));
