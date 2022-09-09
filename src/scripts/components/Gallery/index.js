@@ -1,11 +1,7 @@
+import execute from '../../utils/execute.js';
+
 const SELECTOR_WRAPPER = '.gallery-wrapper';
 const SELECTOR_ITEM = '.gallery-item';
-
-const execute = (fn, ...args) => {
-  if (typeof fn === 'function') {
-    fn(...args);
-  }
-};
 
 /**
  * @typedef {{ perPage?: number; onChangePage?: function; }} GalleryConfigs

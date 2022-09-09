@@ -1,18 +1,14 @@
-const generateID = (() => {
-  let lastID = 1;
-  return () => String(lastID++);
-})();
-
 class Item {
   /**
    * @param {{
+   *  key: string;
    *  name: string;
    *  price: number;
    *  amount?: number;
    * }} item
    */
-  constructor({ name, price, amount = 1 }) {
-    this.id = generateID();
+  constructor({ key, name, price, amount = 1 }) {
+    this.key = key;
     this.name = name;
     this.setPrice(price);
     this.amount = Math.floor(amount);

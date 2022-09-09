@@ -8,12 +8,14 @@ class Cart {
 
   /**
    * @param {{
+   *  key: string;
    *  name: string;
    *  price: number;
    * }}
    */
-  addItem({ name, price }) {
+  addItem({ key, name, price }) {
     const item = new Item({
+      key,
       name,
       price,
       amount: 1,
