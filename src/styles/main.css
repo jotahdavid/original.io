@@ -1210,11 +1210,16 @@ a {
     gap: 1.25rem;
   }
 }
+.about-category__links-list__item {
+  height: 100%;
+}
+
 .about-category__link {
   text-decoration: none;
   font-size: 0.875rem;
   color: hsl(0deg, 0%, 13%);
   position: relative;
+  height: 100%;
 }
 
 .about-category__link::after {
@@ -1224,8 +1229,8 @@ a {
   height: 0.125rem;
   background-color: hsl(15deg, 61%, 66%);
   position: absolute;
-  bottom: -3px;
   left: 0;
+  margin-top: 3px;
   transform: scaleX(0);
   transition: transform 300ms ease-in;
 }

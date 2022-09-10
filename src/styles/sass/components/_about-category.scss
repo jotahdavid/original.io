@@ -89,12 +89,16 @@
     }
   }
 
+  &__links-list__item {
+    height: 100%;
+  }
+
   &__link {
     text-decoration: none;
     font-size: rem(14);
     color: hsl(0, 0%, 13%);
-
     position: relative;
+    height: 100%;
 
     &::after {
       content: "";
@@ -104,8 +108,8 @@
       background-color: map-get($colors, orange);
 
       position: absolute;
-      bottom: -3px;
       left: 0;
+      margin-top: 3px;
 
       transform: scaleX(0);
       transition: transform 300ms ease-in;
