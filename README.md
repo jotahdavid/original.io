@@ -28,10 +28,10 @@ O design do layout e a proposta do teste foram retirados do [🔗 repositório d
     - [x] Informação do produto
     - [x] Recomendação de outros produtos
     - [x] Footer
-- [ ] Funcionalidades
+- [x] Funcionalidades
   - [x] Carrosel
   - [x] Adicionar produto
-  - [ ] Carrinho/Sacola
+  - [x] Carrinho/Sacola
   - [x] Remover produto
 
 ## 💾 Hospedagem
