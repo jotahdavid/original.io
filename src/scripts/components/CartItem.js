@@ -1,4 +1,5 @@
 import createElement from '../utils/createElement.js';
+import R$ from '../utils/formatCurrency.js';
 
 /**
  * @param {{
@@ -12,7 +13,6 @@ import createElement from '../utils/createElement.js';
  * @returns {HTMLElement}
  */
 function CartItem({ name, price, amount, onAddItem, onSubtractItem, onRemove }) {
-  const R$ = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
   const doubleDigit = (value) => String(value).padStart(2, 0);
 
   return createElement(

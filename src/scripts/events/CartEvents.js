@@ -1,5 +1,7 @@
 import CartStore from '../store/CartStore.js';
 import CartItem from '../components/CartItem.js';
+import R$ from '../utils/formatCurrency.js';
+import Cart from '../lib/Cart/index.js';
 
 const $cart = document.querySelector('.cart');
 const $bags = document.querySelectorAll('.purchases');
@@ -34,7 +36,7 @@ export function renderCartList() {
   cartItems.forEach((item) => {
     function handleAddItem() {
       if (item.amount < 99) {
-        item.add();
+        CartStore.dispatch({ type: 'INCREASE_ITEM_AMOUNT', payload: { key: item.key } });
         $cartQuantityValue.textContent = String(item.amount).padStart(2, 0);
       }
       if (item.amount >= 99) {
@@ -45,7 +47,7 @@ export function renderCartList() {
 
     function handleSubtractItem() {
       if (item.amount > 1) {
-        item.subtract();
+        CartStore.dispatch({ type: 'DECREASE_ITEM_AMOUNT', payload: { key: item.key } });
         $cartQuantityValue.textContent = String(item.amount).padStart(2, 0);
       }
       if (item.amount <= 1) {
@@ -89,7 +91,24 @@ function changeCartAmount() {
   });
 }
 
+function changeCartTotalPrice() {
+  const { total } = CartStore.getState();
+  const $cartFooter = $cart.querySelector('.cart__footer');
+  const $cartTotalPrice = $cart.querySelector('.cart__total-price__value');
+  const $cartInstallments = $cart.querySelector('.cart__installments');
+
+  if (total <= 0) {
+    $cartFooter.classList.add('no-display');
+  } else {
+    $cartFooter.classList.remove('no-display');
+  }
+
+  $cartTotalPrice.textContent = R$(total);
+  $cartInstallments.textContent = total > 0 ? `até 3x de ${R$(Cart.getInstallments(3))} sem juros` : null;
+}
+
 export function addCartEvents() {
   addCartVisibilityEvents();
   CartStore.subscribe(changeCartAmount);
+  CartStore.subscribe(changeCartTotalPrice);
 }

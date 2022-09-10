@@ -708,6 +708,10 @@ a {
   overflow-x: hidden;
 }
 
+.no-display {
+  display: none !important;
+}
+
 .purchases__action {
   width: 100%;
   height: 100%;
@@ -1836,6 +1840,10 @@ a {
 
 .no-scroll-x, .no-scroll {
   overflow-x: hidden;
+}
+
+.no-display {
+  display: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */
