@@ -30,9 +30,9 @@ O design do layout e a proposta do teste foram retirados do [🔗 repositório d
     - [x] Footer
 - [ ] Funcionalidades
   - [x] Carrosel
-  - [ ] Adicionar produto
+  - [x] Adicionar produto
   - [ ] Carrinho/Sacola
-  - [ ] Remover produto
+  - [x] Remover produto
 
 ## 💾 Hospedagem
 
