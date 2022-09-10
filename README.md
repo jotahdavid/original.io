@@ -1,4 +1,6 @@
-![](https://img.shields.io/badge/status-in%20progress-yellow)
+![](https://img.shields.io/badge/status-completed-green)
+![](https://img.shields.io/github/languages/top/jotahdavid/original.io)
+![](https://img.shields.io/github/last-commit/jotahdavid/original.io/main)
 
 <p align="center"><img src="./.github/logo-original.io.svg" alt="Original.io Logo"/></p>
 
