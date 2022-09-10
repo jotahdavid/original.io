@@ -5,10 +5,16 @@ import createElement from '../utils/createElement.js';
  *  name: string;
  *  price: number;
  *  amount: number;
- * }} item
+ *  onAddItem: Function;
+ *  onSubtractItem: Function;
+ *  onRemove: Function;
+ * }} props
  * @returns {HTMLElement}
  */
-function CartItem({ name, price, amount }) {
+function CartItem({ name, price, amount, onAddItem, onSubtractItem, onRemove }) {
+  const R$ = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+  const doubleDigit = (value) => String(value).padStart(2, 0);
+
   return createElement(
     'li',
     { className: 'cart__item' },
@@ -23,13 +29,13 @@ function CartItem({ name, price, amount }) {
         className: 'cart__item__info',
       },
       createElement('p', { className: 'cart__item__name' }, name),
-      createElement('p', { className: 'cart__item__price' }, `R$ ${price.toFixed(2).replace('.', ',')}`)
+      createElement('p', { className: 'cart__item__price' }, R$(price))
     ),
     createElement(
       'div',
       { className: 'quantity-control' },
       createElement('button', {
-        className: 'quantity-control__button',
+        className: 'quantity-control__button quantity-control__button--subtract',
         html: `
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -38,10 +44,12 @@ function CartItem({ name, price, amount }) {
             />
           </svg>
         `,
+        onClick: onSubtractItem,
+        disabled: amount <= 1,
       }),
-      createElement('span', { className: 'quantity-control__value' }, String(amount).padStart(2, 0)),
+      createElement('span', { className: 'quantity-control__value' }, doubleDigit(amount)),
       createElement('button', {
-        className: 'quantity-control__button',
+        className: 'quantity-control__button quantity-control__button--add',
         html: `
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -50,6 +58,8 @@ function CartItem({ name, price, amount }) {
             />
           </svg>
         `,
+        onClick: onAddItem,
+        disabled: amount >= 99,
       })
     ),
     createElement('button', {
@@ -62,6 +72,7 @@ function CartItem({ name, price, amount }) {
           />
         </svg>
       `,
+      onClick: onRemove,
     })
   );
 }

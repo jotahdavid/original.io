@@ -2,7 +2,7 @@ import Store from '../lib/Store/index.js';
 import Cart from '../lib/Cart/index.js';
 import generateID from '../utils/generateID.js';
 
-const reducer = (state = [], action) => {
+const reducer = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
       Cart.addItem({
@@ -10,7 +10,16 @@ const reducer = (state = [], action) => {
         name: action.payload.name,
         price: action.payload.price,
       });
-      return state;
+      return {
+        ...state,
+        items: Cart.items,
+      };
+    case 'REMOVE_ITEM':
+      Cart.removeItem(action.payload.key);
+      return {
+        ...state,
+        items: Cart.items,
+      };
     default:
       return state;
   }

@@ -33,6 +33,7 @@ class Item {
   }
 
   subtract() {
+    if (this.amount === 0) return;
     this.amount--;
   }
 

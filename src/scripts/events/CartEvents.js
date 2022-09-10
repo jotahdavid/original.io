@@ -11,7 +11,6 @@ function addCartVisibilityEvents() {
     item.addEventListener('click', () => {
       $portal.classList.add('show-cart');
       document.body.classList.add('no-scroll');
-
       renderCartList();
     });
   });
@@ -33,13 +32,53 @@ export function renderCartList() {
   const $fragment = document.createDocumentFragment();
 
   cartItems.forEach((item) => {
-    $fragment.appendChild(CartItem(item));
+    function handleAddItem() {
+      if (item.amount < 99) {
+        item.add();
+        $cartQuantityValue.textContent = String(item.amount).padStart(2, 0);
+      }
+      if (item.amount >= 99) {
+        $quantityAddBtn.disabled = true;
+      }
+      $quantitySubtractBtn.disabled = false;
+    }
+
+    function handleSubtractItem() {
+      if (item.amount > 1) {
+        item.subtract();
+        $cartQuantityValue.textContent = String(item.amount).padStart(2, 0);
+      }
+      if (item.amount <= 1) {
+        $quantitySubtractBtn.disabled = true;
+      }
+      $quantityAddBtn.disabled = false;
+    }
+
+    function handleRemoveItem() {
+      CartStore.dispatch({ type: 'REMOVE_ITEM', payload: { key: item.key } });
+      $cartItem.remove();
+    }
+
+    const $cartItem = CartItem({
+      name: item.name,
+      price: item.price,
+      amount: item.amount,
+      onAddItem: handleAddItem,
+      onSubtractItem: handleSubtractItem,
+      onRemove: handleRemoveItem,
+    });
+
+    const $quantitySubtractBtn = $cartItem.querySelector('.quantity-control__button--subtract');
+    const $quantityAddBtn = $cartItem.querySelector('.quantity-control__button--add');
+    const $cartQuantityValue = $cartItem.querySelector('.quantity-control__value');
+
+    $fragment.appendChild($cartItem);
   });
 
   $cartList.appendChild($fragment);
 }
 
-function handleNewItem() {
+function changeCartAmount() {
   const $cartAmount = $cart.querySelector('.cart__amount');
   const { items: cartItems } = CartStore.getState();
 
@@ -52,5 +91,5 @@ function handleNewItem() {
 
 export function addCartEvents() {
   addCartVisibilityEvents();
-  CartStore.subscribe(handleNewItem);
+  CartStore.subscribe(changeCartAmount);
 }

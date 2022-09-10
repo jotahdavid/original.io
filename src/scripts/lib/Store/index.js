@@ -1,9 +1,13 @@
 import execute from '../../utils/execute.js';
 
+/**
+ * @class
+ * @template T
+ */
 class Store {
   /**
    * @param {Function} reducer
-   * @param {any} initialState
+   * @param {T} initialState
    */
   constructor(reducer, initialState) {
     if (typeof reducer !== 'function') {
@@ -12,7 +16,7 @@ class Store {
 
     /** @private @type {Function} */
     this._reducer = reducer;
-    /** @private @type {any} */
+    /** @private @type {T} */
     this._state = Object.freeze(initialState);
     /** @private @type {Function[]} */
     this._subscribers = [];

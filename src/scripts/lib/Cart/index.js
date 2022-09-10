@@ -27,17 +27,17 @@ class Cart {
   }
 
   /**
-   * @param {string} id
+   * @param {string} key
    */
-  getItem(id) {
-    return this.items.find((item) => item.id === id) ?? null;
+  getItem(key) {
+    return this.items.find((item) => item.key === key) ?? null;
   }
 
   /**
-   * @param {string} id
+   * @param {string} key
    */
-  removeItem(id) {
-    this.items = this.items.filter((item) => item.id !== id);
+  removeItem(key) {
+    this.items = this.items.filter((item) => item.key !== key);
   }
 
   getTotalItemsPrice() {

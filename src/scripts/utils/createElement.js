@@ -12,6 +12,8 @@ export default function createElement(tag, attributes, ...content) {
         $element.addEventListener(attr.slice(2), value);
       } else if (attr === 'html') {
         $element.innerHTML = value;
+      } else if (attr in $element) {
+        $element[attr] = value;
       } else {
         $element.setAttribute(attr, value);
       }
