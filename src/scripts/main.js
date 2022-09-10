@@ -19,10 +19,27 @@ async function updateGallery(matches) {
   gallery.updatePage();
 }
 
+function preventEvents() {
+  const $anchors = document.querySelectorAll('a');
+  $anchors.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      if (event.currentTarget.getAttribute('href') === '#') {
+        event.preventDefault();
+      }
+    });
+  });
+
+  const $forms = document.querySelectorAll('form');
+  $forms.forEach((item) => {
+    item.addEventListener('submit', (event) => event.preventDefault());
+  });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   addMatchMediaEvents();
   addCartEvents();
   addLightboxEvents();
+  preventEvents();
 
   window.addEventListener('resize', () => updateGallery(smallOnlyMedia.matches));
   updateGallery(smallOnlyMedia.matches);
