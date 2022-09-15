@@ -30,7 +30,7 @@ import R$ from './utils/formatCurrency.js';
  */
 export function renderGalleryItems(items) {
   const $gallery = document.querySelector('.gallery-wrapper');
-  // $gallery.textContent = null;
+  $gallery.textContent = null;
 
   const $fragment = document.createDocumentFragment();
 
@@ -38,7 +38,7 @@ export function renderGalleryItems(items) {
     $fragment.append(
       GalleryProduct({
         imageUrl: item.thumbnail,
-        price: R$(item.price),
+        price: R$(item.price.current),
         colors: item.colors,
         className: 'carousel-horizontal__product',
       })
