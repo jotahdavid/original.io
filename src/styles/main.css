@@ -942,12 +942,12 @@ a {
   cursor: pointer;
 }
 
-.product-info__color-options__item.--active {
+.product-info__color-options__item.active {
   border: 1px solid hsl(0deg, 0%, 100%);
   position: relative;
 }
 
-.product-info__color-options__item.--active::after {
+.product-info__color-options__item.active::after {
   content: "";
   display: block;
   position: absolute;
@@ -985,7 +985,7 @@ a {
   color: hsl(0deg, 0%, 100%);
 }
 
-.product-info__size-options__item.--active {
+.product-info__size-options__item.active {
   background-color: hsl(15deg, 61%, 66%);
   color: hsl(0deg, 0%, 100%);
   font-weight: 700;
