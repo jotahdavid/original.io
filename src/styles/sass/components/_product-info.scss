@@ -144,6 +144,13 @@
 
       cursor: pointer;
 
+      transition: background-color 200ms ease, color 200ms ease;
+
+      &:hover {
+        background-color: lighten(map-get($colors, orange), 8);
+        color: map-get($colors, white);
+      }
+
       &.--active {
         background-color: map-get($colors, orange);
         color: map-get($colors, white);
