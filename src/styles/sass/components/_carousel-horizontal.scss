@@ -59,8 +59,8 @@
     &__color {
       width: rem(14);
       height: rem(14);
-      background-color: gray;
       border-radius: 50%;
+      background-color: var(--color, gray);
     }
 
     &__price {

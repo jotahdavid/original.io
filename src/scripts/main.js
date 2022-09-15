@@ -35,11 +35,19 @@ function preventEvents() {
   });
 }
 
+function setColorOptions() {
+  const $colorOptions = document.querySelectorAll('[data-color]');
+  $colorOptions.forEach((item) => {
+    item.style.setProperty('--color', item.getAttribute('data-color'));
+  });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   addMatchMediaEvents();
   addCartEvents();
   addLightboxEvents();
   preventEvents();
+  setColorOptions();
 
   window.addEventListener('resize', () => updateGallery(smallOnlyMedia.matches));
   updateGallery(smallOnlyMedia.matches);

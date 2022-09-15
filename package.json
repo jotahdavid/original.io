@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "sass:watch": "sass --watch src/styles/sass/main.scss src/styles/main.css",
+    "sass": "sass --watch src/styles/sass/main.scss src/styles/main.css",
     "prettier": "prettier -w ."
   },
   "devDependencies": {

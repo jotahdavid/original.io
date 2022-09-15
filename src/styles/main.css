@@ -938,7 +938,7 @@ a {
   width: 1.625rem;
   height: 1.625rem;
   border-radius: 50%;
-  background-color: gray;
+  background-color: var(--color, gray);
   cursor: pointer;
 }
 
@@ -1078,8 +1078,8 @@ a {
 .carousel-horizontal__product-info__color {
   width: 0.875rem;
   height: 0.875rem;
-  background-color: gray;
   border-radius: 50%;
+  background-color: var(--color, gray);
 }
 
 .carousel-horizontal__product-info__price {
