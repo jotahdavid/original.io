@@ -40,6 +40,7 @@ function GalleryProduct({ className, imageUrl, price, colors }) {
             className: 'carousel-horizontal__product-info__color',
             'data-color': color.code,
             value: color.name,
+            style: `--color: ${color.code}`,
           })
         )
       )

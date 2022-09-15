@@ -47,11 +47,3 @@ export function renderGalleryItems(items) {
 
   $gallery.append($fragment);
 }
-
-async function getProducts() {
-  const pathname = window.location.pathname;
-  const response = await fetch(pathname + 'src/data/products.json');
-  return response.json();
-}
-
-getProducts().then(({ products }) => renderGalleryItems(products));

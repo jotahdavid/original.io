@@ -5,7 +5,7 @@ import { addMatchMediaEvents, smallOnlyMedia } from './matchMedia.js';
 import { addCartEvents } from './events/CartEvents.js';
 import { addLightboxEvents } from './events/LightboxEvents.js';
 import { addProductInfoEvents } from './events/ProductInfoEvents.js';
-import {} from './gallery.js';
+import { renderGalleryItems } from './gallery.js';
 
 const carousel = new Carousel('.carousel-vertical__gallery');
 const gallery = new Gallery('.carousel-horizontal', { perPage: 4, onChangePage: handleChangePage });
@@ -44,6 +44,12 @@ function setColorOptions() {
   });
 }
 
+async function getProducts() {
+  const pathname = window.location.pathname;
+  const response = await fetch(pathname + 'src/data/products.json');
+  return response.json();
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   addMatchMediaEvents();
   addCartEvents();
@@ -53,7 +59,10 @@ window.addEventListener('DOMContentLoaded', () => {
   setColorOptions();
 
   window.addEventListener('resize', () => updateGallery(smallOnlyMedia.matches));
-  updateGallery(smallOnlyMedia.matches);
+  getProducts().then(({ products }) => {
+    renderGalleryItems(products);
+    updateGallery(smallOnlyMedia.matches);
+  });
 
   carousel.addEvents();
   gallery.addEvents();
