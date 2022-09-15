@@ -5,6 +5,7 @@ import { addMatchMediaEvents, smallOnlyMedia } from './matchMedia.js';
 import { addCartEvents } from './events/CartEvents.js';
 import { addLightboxEvents } from './events/LightboxEvents.js';
 import { addProductInfoEvents } from './events/ProductInfoEvents.js';
+import {} from './gallery.js';
 
 const carousel = new Carousel('.carousel-vertical__gallery');
 const gallery = new Gallery('.carousel-horizontal', { perPage: 4, onChangePage: handleChangePage });
