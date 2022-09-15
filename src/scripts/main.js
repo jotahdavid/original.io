@@ -6,6 +6,7 @@ import { addCartEvents } from './events/CartEvents.js';
 import { addLightboxEvents } from './events/LightboxEvents.js';
 import { addProductInfoEvents } from './events/ProductInfoEvents.js';
 import { renderGalleryItems } from './gallery.js';
+import shuffleArray from './utils/shuffleArray.js';
 
 const carousel = new Carousel('.carousel-vertical__gallery');
 const gallery = new Gallery('.carousel-horizontal', { perPage: 4, onChangePage: handleChangePage });
@@ -47,7 +48,9 @@ function setColorOptions() {
 async function getProducts() {
   const pathname = window.location.pathname;
   const response = await fetch(pathname + 'src/data/products.json');
-  return response.json();
+  const { products } = await response.json();
+  const shuffledProducts = shuffleArray(products).concat(shuffleArray(products), shuffleArray(products));
+  return shuffledProducts;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -59,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
   setColorOptions();
 
   window.addEventListener('resize', () => updateGallery(smallOnlyMedia.matches));
-  getProducts().then(({ products }) => {
+  getProducts().then((products) => {
     renderGalleryItems(products);
     updateGallery(smallOnlyMedia.matches);
   });
