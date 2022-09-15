@@ -1,0 +1,102 @@
+{
+  "products": [
+    {
+      "id": "RT 0568 | 03.07.0653",
+      "thumbnail": "src/images/products/prod02-large.jpeg",
+      "name": "Rasteira tira dedo",
+      "price": {
+        "original": 69,
+        "current": 55.2
+      },
+      "colors": [
+        {
+          "name": "Fucsia",
+          "code": "#A9095E"
+        },
+        {
+          "name": "Prussian",
+          "code": "#2A5A75"
+        },
+        {
+          "name": "Cinnamon",
+          "code": "#A14830"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        }
+      ],
+      "size": {
+        "min": 33,
+        "max": 42
+      }
+    },
+    {
+      "id": "RT 1889 | 05.34.3177",
+      "thumbnail": "src/images/products/prod01.jpeg",
+      "name": "Carteira de couro",
+      "price": {
+        "original": 114.6,
+        "current": 96.9
+      },
+      "colors": [
+        {
+          "name": "Cinnamon",
+          "code": "#A14830"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        }
+      ],
+      "size": null
+    },
+    {
+      "id": "RT 5481 | 49.02.8165",
+      "thumbnail": "src/images/products/prod04.jpeg",
+      "name": "Sandálias de tiras cruzadas",
+      "price": {
+        "original": 72.24,
+        "current": 60.89
+      },
+      "colors": [
+        {
+          "name": "Silver",
+          "code": "#B5B7BB"
+        },
+        {
+          "name": "Gold",
+          "code": "#CCAA35"
+        }
+      ],
+      "size": {
+        "min": 33,
+        "max": 42
+      }
+    },
+    {
+      "id": "RT 6442 | 01.93.1942",
+      "thumbnail": "src/images/products/prod03.jpeg",
+      "name": "Bolsa de ombro",
+      "price": {
+        "original": 62.99,
+        "current": 50.5
+      },
+      "colors": [
+        {
+          "name": "Cinnamon",
+          "code": "#A14830"
+        },
+        {
+          "name": "Off white",
+          "code": "#D1B6AA"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        }
+      ],
+      "size": null
+    }
+  ]
+}
