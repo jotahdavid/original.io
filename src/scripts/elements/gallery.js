@@ -1,5 +1,5 @@
-import GalleryProduct from './components/GalleryProduct.js';
-import R$ from './utils/formatCurrency.js';
+import GalleryProduct from '../components/GalleryProduct.js';
+import R$ from '../utils/formatCurrency.js';
 
 /**
  * @typedef {{

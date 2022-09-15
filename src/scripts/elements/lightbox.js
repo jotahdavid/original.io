@@ -1,5 +1,5 @@
 import CartStore from '../store/CartStore.js';
-import { renderCartList } from './CartEvents.js';
+import { renderCartList } from './cart.js';
 
 const $portal = document.querySelector('.portal');
 

@@ -2,10 +2,10 @@ import Carousel from './components/Carousel/index.js';
 import Gallery from './components/Gallery/index.js';
 
 import { addMatchMediaEvents, smallOnlyMedia } from './matchMedia.js';
-import { addCartEvents } from './events/CartEvents.js';
-import { addLightboxEvents } from './events/LightboxEvents.js';
-import { addProductInfoEvents } from './events/ProductInfoEvents.js';
-import { renderGalleryItems } from './gallery.js';
+import { addCartEvents } from './elements/cart.js';
+import { addLightboxEvents } from './elements/lightbox.js';
+import { addProductInfoEvents } from './elements/productInfo.js';
+import { renderGalleryItems } from './elements/gallery.js';
 import shuffleArray from './utils/shuffleArray.js';
 
 const carousel = new Carousel('.carousel-vertical__gallery');
