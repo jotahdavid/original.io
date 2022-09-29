@@ -68,7 +68,7 @@ class Gallery {
       let attempts = 0;
 
       const interval = setInterval(() => {
-        if (this._wrapper.scrollLeft === distance) {
+        if (Math.round(this._wrapper.scrollLeft) === distance) {
           this._isSliding = false;
           clearInterval(interval);
           resolve();
@@ -88,7 +88,7 @@ class Gallery {
 
   updatePage() {
     for (let i = 0; i <= this._lastPage; i++) {
-      if (this.getDistance(i) === this._wrapper.scrollLeft) {
+      if (this.getDistance(i) === Math.round(this._wrapper.scrollLeft)) {
         this._page = i;
         execute(this._changePageListener, i + 1, this._lastPage + 1);
         return;
