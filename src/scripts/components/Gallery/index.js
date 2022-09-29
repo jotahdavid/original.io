@@ -65,12 +65,23 @@ class Gallery {
     this._isSliding = true;
 
     return new Promise((resolve) => {
+      let attempts = 0;
+
       const interval = setInterval(() => {
         if (this._wrapper.scrollLeft === distance) {
           this._isSliding = false;
           clearInterval(interval);
           resolve();
         }
+
+        if (attempts > 10) {
+          console.error(`Infinite scroll: "scrollLeft" == ${this._wrapper.scrollLeft} "distance" == ${distance}`);
+          this._isSliding = false;
+          clearInterval(interval);
+          resolve(this.scroll(0));
+        }
+
+        attempts += 1;
       }, 100);
     });
   }
@@ -80,7 +91,12 @@ class Gallery {
       if (this.getDistance(i) === this._wrapper.scrollLeft) {
         this._page = i;
         execute(this._changePageListener, i + 1, this._lastPage + 1);
+        return;
       }
+    }
+
+    if (this.getItems().length > 1) {
+      console.error(`Can't get the wrapper distance: "scrollLeft" == ${this._wrapper.scrollLeft}`);
     }
   }
 
