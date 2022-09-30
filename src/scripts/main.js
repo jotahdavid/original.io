@@ -49,7 +49,11 @@ async function getProducts() {
   const pathname = window.location.pathname;
   const response = await fetch(pathname + 'src/data/products.json');
   const { products } = await response.json();
-  const shuffledProducts = shuffleArray(products).concat(shuffleArray(products), shuffleArray(products));
+  const shuffledProducts = shuffleArray(products).concat(
+    shuffleArray(products),
+    shuffleArray(products),
+    shuffleArray(products).slice(2)
+  );
   return shuffledProducts;
 }
 

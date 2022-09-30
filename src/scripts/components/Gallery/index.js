@@ -1,7 +1,11 @@
 import execute from '../../utils/execute.js';
 
+const CLASS_ITEM = 'gallery-item';
+const CLASS_ITEM_PLACEHOLDER = 'gallery-item--placeholder';
+
 const SELECTOR_WRAPPER = '.gallery-wrapper';
 const SELECTOR_ITEM = '.gallery-item';
+const SELECTOR_ITEM_PLACEHOLDER = '.gallery-item--placeholder';
 
 /**
  * @typedef {{ perPage?: number; onChangePage?: function; }} GalleryConfigs
@@ -28,8 +32,27 @@ class Gallery {
   }
 
   set itemPerPage(value) {
+    if (this._itemPerPage === value || this.getItems().length === 0) return;
+
     this._itemPerPage = value;
     this._element.style.setProperty('--item-per-page', value);
+
+    this._wrapper.querySelectorAll(SELECTOR_ITEM_PLACEHOLDER).forEach((item) => item.remove());
+
+    const totalPages = this.getItems().length / this._itemPerPage;
+
+    if (totalPages === Math.ceil(totalPages)) return;
+
+    const amountMissingItems = (Math.ceil(totalPages) - totalPages) * this._itemPerPage;
+    const $fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < amountMissingItems; i++) {
+      const $item = document.createElement('div');
+      $item.classList.add(CLASS_ITEM, CLASS_ITEM_PLACEHOLDER);
+      $fragment.appendChild($item);
+    }
+
+    this._wrapper.appendChild($fragment);
   }
 
   async next() {
@@ -87,6 +110,8 @@ class Gallery {
   }
 
   updatePage() {
+    if (this._isSliding) return;
+
     for (let i = 0; i <= this._lastPage; i++) {
       if (this.getDistance(i) === Math.round(this._wrapper.scrollLeft)) {
         this._page = i;
@@ -104,7 +129,7 @@ class Gallery {
    * @returns {number}
    */
   get _lastPage() {
-    return this.getItems().length / this._itemPerPage - 1;
+    return Math.ceil(this.getItems().length / this._itemPerPage - 1);
   }
 
   /**
