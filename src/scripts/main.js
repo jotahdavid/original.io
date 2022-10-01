@@ -5,6 +5,7 @@ import { addMatchMediaEvents, smallOnlyMedia } from './matchMedia.js';
 import { addCartEvents } from './elements/cart.js';
 import { addLightboxEvents } from './elements/lightbox.js';
 import { addProductInfoEvents } from './elements/productInfo.js';
+import { addNewsletterEvents } from './elements/newsletter.js';
 import { renderGalleryItems } from './elements/gallery.js';
 import shuffleArray from './utils/shuffleArray.js';
 
@@ -71,6 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
   addCartEvents();
   addLightboxEvents();
   addProductInfoEvents();
+  addNewsletterEvents();
   preventEvents();
   setColorOptions();
 

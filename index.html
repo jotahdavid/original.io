@@ -465,14 +465,20 @@
           </details>
         </div>
         <article class="footer__newsletter-signup">
-          <form class="newsletter-signup" autocomplete="off">
+          <form class="newsletter-signup" autocomplete="off" novalidate>
             <h3 class="newsletter-signup__title">Assine nossa news</h3>
             <label class="newsletter-signup__label" for="newsletter-name">
-              <input class="newsletter-signup__input" id="newsletter-name" placeholder="Nome" type="text" />
+              <input class="newsletter-signup__input" id="newsletter-name" name="name" placeholder="Nome" type="text" />
               <span class="newsletter-signup__placeholder">Nome</span>
             </label>
             <label class="newsletter-signup__label" for="newsletter-email">
-              <input class="newsletter-signup__input" id="newsletter-email" placeholder="E-mail" type="email" />
+              <input
+                class="newsletter-signup__input"
+                id="newsletter-email"
+                name="email"
+                placeholder="E-mail"
+                type="email"
+              />
               <span class="newsletter-signup__placeholder">E-mail</span>
             </label>
             <input class="newsletter-signup__button" type="submit" value="Enviar" />
