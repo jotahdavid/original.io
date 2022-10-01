@@ -31,8 +31,13 @@ class Gallery {
     this.itemPerPage = config.perPage ?? 4;
   }
 
+  /**
+   * @param {number} value
+   */
   set itemPerPage(value) {
-    if (this._itemPerPage === value || this.getItems().length === 0) return;
+    if (this._itemPerPage === value || this.getItems().length === 0) {
+      return;
+    }
 
     this._itemPerPage = value;
     this._element.style.setProperty('--item-per-page', value);
@@ -41,9 +46,11 @@ class Gallery {
 
     const totalPages = this.getItems().length / this._itemPerPage;
 
-    if (totalPages === Math.ceil(totalPages)) return;
+    if (totalPages === Math.ceil(totalPages)) {
+      return;
+    }
 
-    const amountMissingItems = (Math.ceil(totalPages) - totalPages) * this._itemPerPage;
+    const amountMissingItems = Math.round((Math.ceil(totalPages) - totalPages) * this._itemPerPage);
     const $fragment = document.createDocumentFragment();
 
     for (let i = 0; i < amountMissingItems; i++) {
@@ -129,7 +136,7 @@ class Gallery {
    * @returns {number}
    */
   get _lastPage() {
-    return Math.ceil(this.getItems().length / this._itemPerPage - 1);
+    return Math.ceil(this.getItems().length / (this._itemPerPage || 1) - 1);
   }
 
   /**

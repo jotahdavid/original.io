@@ -9,7 +9,7 @@ import { renderGalleryItems } from './elements/gallery.js';
 import shuffleArray from './utils/shuffleArray.js';
 
 const carousel = new Carousel('.carousel-vertical__gallery');
-const gallery = new Gallery('.carousel-horizontal', { perPage: 4, onChangePage: handleChangePage });
+const gallery = new Gallery('.carousel-horizontal', { onChangePage: handleChangePage });
 
 function handleChangePage(page, limit) {
   const $index = gallery._element.querySelector('.carousel-horizontal__controllers__index');
