@@ -57,6 +57,15 @@ async function getProducts() {
   return shuffledProducts;
 }
 
+function createWindowResizeHandler() {
+  let prevWindowWidth = window.innerWidth;
+  return () => {
+    if (prevWindowWidth === window.innerWidth) return;
+    prevWindowWidth = window.innerWidth;
+    updateGallery(smallOnlyMedia.matches);
+  };
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   addMatchMediaEvents();
   addCartEvents();
@@ -65,7 +74,8 @@ window.addEventListener('DOMContentLoaded', () => {
   preventEvents();
   setColorOptions();
 
-  window.addEventListener('resize', () => updateGallery(smallOnlyMedia.matches));
+  window.addEventListener('resize', createWindowResizeHandler());
+
   getProducts().then((products) => {
     renderGalleryItems(products);
     updateGallery(smallOnlyMedia.matches);
