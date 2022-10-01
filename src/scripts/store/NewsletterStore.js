@@ -2,10 +2,10 @@ import Store from '../lib/Store/index.js';
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_ERRORS':
+    case 'ADD_ERROR':
       return {
         ...state,
-        errors: [...state.errors, ...action.payload.errors],
+        errors: [...state.errors, action.payload.error],
       };
     case 'REMOVE_ERROR':
       return {
@@ -22,7 +22,7 @@ const reducer = (state = {}, action) => {
   }
 };
 
-const initialState = { fields: { name: '', email: '' }, errors: [] };
+const initialState = { fields: ['name', 'email'], errors: [] };
 const store = new Store(reducer, initialState);
 
 export default store;

@@ -42,15 +42,21 @@
     }
   }
 
-  &__label {
+  &__field {
     width: 100%;
-    height: rem(42);
-
-    display: flex;
-    align-items: flex-end;
-
     margin-bottom: rem(14);
-    position: relative;
+
+    &.error {
+      input {
+        border-color: map-get($colors, danger, light);
+        color: map-get($colors, danger, light);
+      }
+
+      span {
+        font-weight: map-get($font-bold, bold);
+        color: map-get($colors, danger, main);
+      }
+    }
 
     &:last-of-type {
       margin-bottom: rem(28);
@@ -65,6 +71,15 @@
         margin: 0;
       }
     }
+  }
+
+  &__label {
+    height: rem(42);
+
+    display: flex;
+    align-items: flex-end;
+
+    position: relative;
   }
 
   &__input {
@@ -104,6 +119,7 @@
     transition: all 200ms ease;
 
     @include breakpoint(smedium-only) {
+      top: 40%;
       font-size: rem(18);
     }
   }
@@ -115,8 +131,21 @@
     font-size: rem(12);
 
     @include breakpoint(smedium-only) {
-      top: rem(4);
+      top: -#{rem(4)};
       font-size: rem(16);
+    }
+  }
+
+  &__field-errors {
+    font-size: rem(12);
+    font-family: $montserrat;
+    font-weight: map-get($font-bold, bold);
+    color: map-get($colors, danger, dark);
+    margin-top: rem(4);
+
+    @include breakpoint(smedium-only) {
+      font-size: rem(14);
+      margin-top: rem(8);
     }
   }
 
@@ -137,6 +166,11 @@
 
     &:hover {
       background-color: darken(map-get($colors, orange), 8);
+    }
+
+    &:disabled {
+      cursor: default;
+      background-color: map-get($colors, blue-gray);
     }
 
     @include breakpoint(smedium-only) {

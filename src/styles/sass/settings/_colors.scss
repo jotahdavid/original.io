@@ -16,4 +16,9 @@ $colors: (
   black: hsl(0, 0%, 0%),
   white: hsl(0, 0%, 100%),
   green: hsl(166, 49%, 38%),
+  danger: (
+    light: hsl(0, 92%, 71%),
+    main: hsl(0, 97%, 65%),
+    dark: hsl(0, 92%, 58%),
+  ),
 );

@@ -398,8 +398,8 @@ a {
 .footer__newsletter-signup {
   grid-area: newsletter;
   justify-self: center;
-  max-width: 18.125rem;
-  max-height: 18.125rem;
+  max-width: 20rem;
+  max-height: 20rem;
   width: 30vw;
   height: 30vw;
   border-radius: 50%;
@@ -1313,29 +1313,42 @@ a {
     margin-bottom: 1rem;
   }
 }
-.newsletter-signup__label {
+.newsletter-signup__field {
   width: 100%;
-  height: 2.625rem;
-  display: flex;
-  align-items: flex-end;
   margin-bottom: 0.875rem;
-  position: relative;
 }
 
-.newsletter-signup__label:last-of-type {
+.newsletter-signup__field.error input {
+  border-color: hsl(0deg, 92%, 71%);
+  color: hsl(0deg, 92%, 71%);
+}
+
+.newsletter-signup__field.error span {
+  font-weight: 700;
+  color: hsl(0deg, 97%, 65%);
+}
+
+.newsletter-signup__field:last-of-type {
   margin-bottom: 1.75rem;
 }
 
 @media (max-width: 43.6875rem) {
-  .newsletter-signup__label {
+  .newsletter-signup__field {
     height: 3.75rem;
   }
-  .newsletter-signup__label:last-of-type {
+  .newsletter-signup__field:last-of-type {
     grid-column: 1/2;
     grid-row: 3/4;
     margin: 0;
   }
 }
+.newsletter-signup__label {
+  height: 2.625rem;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
 .newsletter-signup__input {
   width: 100%;
   font-family: "Montserrat", sans-serif;
@@ -1373,6 +1386,7 @@ a {
 
 @media (max-width: 43.6875rem) {
   .newsletter-signup__placeholder {
+    top: 40%;
     font-size: 1.125rem;
   }
 }
@@ -1384,8 +1398,22 @@ a {
 
 @media (max-width: 43.6875rem) {
   .newsletter-signup__input:focus + .newsletter-signup__placeholder, .newsletter-signup__input:not(:placeholder-shown) + .newsletter-signup__placeholder {
-    top: 0.25rem;
+    top: -0.25rem;
     font-size: 1rem;
+  }
+}
+.newsletter-signup__field-errors {
+  font-size: 0.75rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: hsl(0deg, 92%, 58%);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 43.6875rem) {
+  .newsletter-signup__field-errors {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
   }
 }
 .newsletter-signup__button {
@@ -1404,6 +1432,11 @@ a {
 
 .newsletter-signup__button:hover {
   background-color: #d57353;
+}
+
+.newsletter-signup__button:disabled {
+  cursor: default;
+  background-color: hsl(215deg, 13%, 72%);
 }
 
 @media (max-width: 43.6875rem) {
