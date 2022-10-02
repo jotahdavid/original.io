@@ -6,6 +6,7 @@ import { addCartEvents } from './elements/cart.js';
 import { addLightboxEvents } from './elements/lightbox.js';
 import { addProductInfoEvents } from './elements/productInfo.js';
 import { addNewsletterEvents } from './elements/newsletter.js';
+import { addModalEvents } from './elements/modal.js';
 import { renderGalleryItems } from './elements/gallery.js';
 import shuffleArray from './utils/shuffleArray.js';
 
@@ -73,6 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
   addLightboxEvents();
   addProductInfoEvents();
   addNewsletterEvents();
+  addModalEvents();
   preventEvents();
   setColorOptions();
 

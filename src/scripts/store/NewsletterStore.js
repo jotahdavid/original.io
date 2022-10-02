@@ -17,12 +17,25 @@ const reducer = (state = {}, action) => {
         ...state,
         errors: [],
       };
+    case 'SUBMIT_FIELDS':
+      const { name, email } = action.payload;
+      return {
+        ...state,
+        isSubmitting: true,
+        fields: { name, email },
+      };
+    case 'RESET_FIELDS':
+      return {
+        ...state,
+        isSubmitting: false,
+        fields: { name: '', email: '' },
+      };
     default:
       return state;
   }
 };
 
-const initialState = { fields: ['name', 'email'], errors: [] };
+const initialState = { isSubmitting: false, fields: { name: '', email: '' }, errors: [] };
 const store = new Store(reducer, initialState);
 
 export default store;

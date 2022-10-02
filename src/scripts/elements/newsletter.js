@@ -1,5 +1,6 @@
 import NewsletterStore from '../store/NewsletterStore.js';
 import isEmailValid from '../utils/isEmailValid.js';
+import isEmpty from '../utils/isEmpty.js';
 
 /**
  * @param {HTMLFormElement} form
@@ -23,7 +24,7 @@ function handleNameChange(name) {
     payload: { field: 'name' },
   });
 
-  if (name === '') {
+  if (isEmpty(name)) {
     NewsletterStore.dispatch({
       type: 'ADD_ERROR',
       payload: { error: { field: 'name', message: 'Nome é obrigatório!' } },
@@ -37,7 +38,7 @@ function handleEmailChange(email) {
     payload: { field: 'email' },
   });
 
-  if (email === '') {
+  if (isEmpty(email)) {
     NewsletterStore.dispatch({
       type: 'ADD_ERROR',
       payload: { error: { field: 'email', message: 'E-mail é obrigatório!' } },
@@ -53,6 +54,9 @@ function handleEmailChange(email) {
   }
 }
 
+const $newsletterForm = document.querySelector('.newsletter-signup');
+const $newsletterSubmitBtn = $newsletterForm.querySelector('.newsletter-signup__button');
+
 function handleNewsletterFormSubmit(event) {
   event.preventDefault();
 
@@ -67,7 +71,11 @@ function handleNewsletterFormSubmit(event) {
   const { errors } = NewsletterStore.getState();
   if (errors.length > 0) return;
 
-  alert('Você foi cadastrado com sucesso na Newsletter!');
+  NewsletterStore.dispatch({ type: 'SUBMIT_FIELDS', payload: { name, email } });
+  NewsletterStore.dispatch({ type: 'RESET_FIELDS' });
+
+  $form.reset();
+  $newsletterSubmitBtn.disabled = true;
 }
 
 function handleNewsletterChange(event) {
@@ -87,16 +95,13 @@ function handleNewsletterChange(event) {
 }
 
 export function addNewsletterEvents() {
-  const $newsletterForm = document.querySelector('.newsletter-signup');
-  const $newsletterSubmitBtn = $newsletterForm.querySelector('.newsletter-signup__button');
-
   $newsletterForm.addEventListener('submit', handleNewsletterFormSubmit);
   $newsletterForm.addEventListener('input', handleNewsletterChange);
 
   NewsletterStore.subscribe(() => {
     const { fields } = NewsletterStore.getState();
 
-    fields.forEach((field) => {
+    Object.keys(fields).forEach((field) => {
       const $field = $newsletterForm[field]?.closest('.newsletter-signup__field');
       const $errorsField = $field.querySelector('.newsletter-signup__field-errors');
 
@@ -108,11 +113,7 @@ export function addNewsletterEvents() {
   NewsletterStore.subscribe(() => {
     const { errors } = NewsletterStore.getState();
 
-    if (errors.length > 0) {
-      $newsletterSubmitBtn.disabled = true;
-    } else {
-      $newsletterSubmitBtn.disabled = false;
-    }
+    $newsletterSubmitBtn.disabled = errors.length > 0;
 
     errors.forEach((error) => {
       const $field = $newsletterForm[error.field]?.closest('.newsletter-signup__field');
