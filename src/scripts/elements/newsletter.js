@@ -69,7 +69,7 @@ function handleNewsletterFormSubmit(event) {
   handleEmailChange(email);
 
   const { errors } = NewsletterStore.getState();
-  if (errors.length > 0) return;
+  if (!isEmpty(errors)) return;
 
   NewsletterStore.dispatch({ type: 'SUBMIT_FIELDS', payload: { name, email } });
   NewsletterStore.dispatch({ type: 'RESET_FIELDS' });
@@ -79,7 +79,7 @@ function handleNewsletterFormSubmit(event) {
 }
 
 function handleNewsletterChange(event) {
-  const fieldName = event.target.name;
+  const fieldName = event.target.getAttribute('name');
 
   const $form = event.currentTarget;
   const fieldValue = getFormData($form)[fieldName];
@@ -113,7 +113,7 @@ export function addNewsletterEvents() {
   NewsletterStore.subscribe(() => {
     const { errors } = NewsletterStore.getState();
 
-    $newsletterSubmitBtn.disabled = errors.length > 0;
+    $newsletterSubmitBtn.disabled = !isEmpty(errors);
 
     errors.forEach((error) => {
       const $field = $newsletterForm[error.field]?.closest('.newsletter-signup__field');

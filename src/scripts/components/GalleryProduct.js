@@ -1,7 +1,7 @@
 import createElement from '../utils/createElement.js';
 
 /**
- * @typedef {import('../gallery.js').ProductColor} ProductColor
+ * @typedef {import('../elements/gallery.js').ProductColor} ProductColor
  */
 
 /**
@@ -39,7 +39,7 @@ function GalleryProduct({ className, imageUrl, price, colors }) {
           createElement('li', {
             className: 'carousel-horizontal__product-info__color',
             'data-color': color.code,
-            value: color.name,
+            'data-value': color.name,
             style: `--color: ${color.code}`,
           })
         )
