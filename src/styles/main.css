@@ -585,7 +585,8 @@ a {
 }
 
 .portal .lightbox,
-.portal .cart {
+.portal .cart,
+.portal .modal {
   display: none;
 }
 
@@ -605,6 +606,15 @@ a {
 .portal.show-cart .cart {
   display: flex;
   animation: slide 400ms ease;
+}
+
+.portal.show-modal {
+  padding: 3.5rem 0 1rem;
+}
+
+.portal.show-modal .modal {
+  display: block;
+  animation: fade-in 300ms ease;
 }
 
 @keyframes fade-in {
@@ -711,7 +721,7 @@ a {
   border-bottom-color: hsl(0deg, 0%, 41%);
 }
 
-.lightbox__confirm, .lightbox__continue, .close-button, .purchases__action {
+.modal__confirm, .lightbox__confirm, .lightbox__continue, .close-button, .purchases__action {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -1893,6 +1903,75 @@ a {
 
 .lightbox__continue:hover {
   color: #929cab;
+}
+
+.modal {
+  max-width: 27.8125rem;
+  width: 90%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: center;
+  height: 3.125rem;
+  margin-bottom: 2rem;
+}
+
+.modal__icon {
+  width: 6.25rem;
+  height: 6.25rem;
+  padding: 1.125rem;
+  background-color: hsl(166deg, 49%, 38%);
+  border-radius: 50%;
+  fill: hsl(0deg, 0%, 100%);
+  position: relative;
+  bottom: 100%;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modal__message {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.375rem;
+  margin-bottom: 3.125rem;
+}
+
+.modal__email {
+  font-weight: 700;
+}
+
+.modal__confirm {
+  width: 100%;
+  height: 3.25rem;
+  border-radius: 0.25rem;
+  background-color: hsl(166deg, 49%, 38%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 100%);
+  transition: background-color 200ms ease;
+}
+
+.modal__confirm:hover {
+  background-color: #277260;
 }
 
 .no-scroll-y, .no-scroll {

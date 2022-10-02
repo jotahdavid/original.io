@@ -19,7 +19,8 @@
   }
 
   .lightbox,
-  .cart {
+  .cart,
+  .modal {
     display: none;
   }
 
@@ -38,6 +39,15 @@
     .cart {
       display: flex;
       animation: slide 400ms ease;
+    }
+  }
+
+  &.show-modal {
+    padding: rem(56) 0 1rem;
+
+    .modal {
+      display: block;
+      animation: fade-in 300ms ease;
     }
   }
 }
