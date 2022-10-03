@@ -8,6 +8,25 @@ const SELECTOR_ITEM = '.gallery-item';
 const SELECTOR_ITEM_PLACEHOLDER = '.gallery-item--placeholder';
 
 /**
+ * @param {number} value1
+ * @param {number} value2
+ */
+const isEqualOrClose = (value1, value2, n = 2) => {
+  return value1 === value2 || (value2 >= value1 && value2 <= value1 + n) || (value2 <= value1 && value2 >= value1 - n);
+};
+
+const debugFn =
+  (fn, cb) =>
+  (...params) => {
+    cb(...params);
+    return fn(...params);
+  };
+
+const isEqualOrCloseDebug = debugFn(isEqualOrClose, (value1, value2) => {
+  console.log({ value1, value2 });
+});
+
+/**
  * @typedef {{ perPage?: number; onChangePage?: function; }} GalleryConfigs
  */
 
@@ -98,7 +117,7 @@ class Gallery {
       let attempts = 0;
 
       const interval = setInterval(() => {
-        if (Math.round(this._wrapper.scrollLeft) === distance) {
+        if (isEqualOrClose(Math.round(this._wrapper.scrollLeft), distance)) {
           this._isSliding = false;
           clearInterval(interval);
           resolve();
@@ -120,7 +139,7 @@ class Gallery {
     if (this._isSliding) return;
 
     for (let i = 0; i <= this._lastPage; i++) {
-      if (this.getDistance(i) === Math.round(this._wrapper.scrollLeft)) {
+      if (isEqualOrClose(this.getDistance(i), Math.round(this._wrapper.scrollLeft))) {
         this._page = i;
         execute(this._changePageListener, i + 1, this._lastPage + 1);
         return;
