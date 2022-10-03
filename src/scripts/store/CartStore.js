@@ -14,6 +14,7 @@ const reducer = (state = {}, action) => {
         ...state,
         items: Cart.items,
         total: Cart.getTotalItemsPrice(),
+        isOrderFinished: false,
       };
     case 'INCREASE_ITEM_AMOUNT':
       Cart.getItem(action.payload.key)?.add();
@@ -37,9 +38,10 @@ const reducer = (state = {}, action) => {
         total: Cart.getTotalItemsPrice(),
       };
     case 'FINISH_ORDER':
+      Cart.clear();
       return {
         ...state,
-        items: [],
+        items: Cart.items,
         total: 0,
         isOrderFinished: true,
       };

@@ -40,6 +40,10 @@ class Cart {
     this.items = this.items.filter((item) => item.key !== key);
   }
 
+  clear() {
+    this.items = [];
+  }
+
   getTotalItemsPrice() {
     return this.items.reduce((acc, item) => item.getTotalPrice() * 100 + acc, 0) / 100;
   }
