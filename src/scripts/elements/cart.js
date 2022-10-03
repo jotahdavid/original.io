@@ -23,6 +23,14 @@ function addCartVisibilityEvents() {
     $portal.classList.remove('show-cart');
     document.body.classList.remove('no-scroll');
   });
+
+  const $finishOrderBtn = $cart.querySelector('.cart__cta');
+
+  $finishOrderBtn.addEventListener('click', () => {
+    CartStore.dispatch({ type: 'FINISH_ORDER' });
+    $portal.classList.remove('show-cart');
+    document.body.classList.remove('no-scroll');
+  });
 }
 
 export function renderCartList() {
@@ -111,4 +119,11 @@ export function addCartEvents() {
   addCartVisibilityEvents();
   CartStore.subscribe(changeCartAmount);
   CartStore.subscribe(changeCartTotalPrice);
+  CartStore.dispatch({
+    type: 'ADD_ITEM',
+    payload: {
+      name: 'Rasteira Tira Dedo',
+      price: 55.2,
+    },
+  });
 }

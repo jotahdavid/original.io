@@ -36,12 +36,19 @@ const reducer = (state = {}, action) => {
         items: Cart.items,
         total: Cart.getTotalItemsPrice(),
       };
+    case 'FINISH_ORDER':
+      return {
+        ...state,
+        items: [],
+        total: 0,
+        isOrderFinished: true,
+      };
     default:
       return state;
   }
 };
 
-const initialState = { total: 0, items: Cart.items };
+const initialState = { total: 0, items: Cart.items, isOrderFinished: false };
 const store = new Store(reducer, initialState);
 
 export default store;
