@@ -119,11 +119,4 @@ export function addCartEvents() {
   addCartVisibilityEvents();
   CartStore.subscribe(changeCartAmount);
   CartStore.subscribe(changeCartTotalPrice);
-  CartStore.dispatch({
-    type: 'ADD_ITEM',
-    payload: {
-      name: 'Rasteira Tira Dedo',
-      price: 55.2,
-    },
-  });
 }
