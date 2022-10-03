@@ -35,6 +35,7 @@ O design do layout e a proposta do teste foram retirados do [🔗 repositório d
   - [x] Adicionar produto
   - [x] Carrinho/Sacola
   - [x] Remover produto
+  - [x] Validação no formulário da Newsletter
 
 ## 💾 Hospedagem
 
