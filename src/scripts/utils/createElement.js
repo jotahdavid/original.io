@@ -1,4 +1,18 @@
 import isEmpty from './isEmpty.js';
+import typeOf from './typeOf.js';
+
+function getElementByTag(tag) {
+  if (tag instanceof HTMLElement) {
+    return tag;
+  }
+  if (typeOf(tag) !== 'string') {
+    throw new TypeError('tag must be string or an element');
+  }
+  if (tag.toLowerCase() === 'fragment') {
+    return document.createDocumentFragment();
+  }
+  return document.createElement(tag);
+}
 
 /**
  * @param {string | HTMLElement} tag
@@ -7,7 +21,7 @@ import isEmpty from './isEmpty.js';
  * @returns {HTMLElement}
  */
 export default function createElement(tag, attributes, ...content) {
-  const $element = !(tag instanceof HTMLElement) ? document.createElement(tag) : tag;
+  const $element = getElementByTag(tag);
   if (attributes) {
     for (const [attribute, value] of Object.entries(attributes)) {
       const attr = attribute.toLowerCase();

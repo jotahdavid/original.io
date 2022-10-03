@@ -1,30 +1,39 @@
+import Modal from '../components/Modal.js';
 import NewsletterStore from '../store/NewsletterStore.js';
+import createElement from '../utils/createElement.js';
 
 const $portal = document.querySelector('.portal');
-const $modal = $portal.querySelector('.modal');
-const $email = $modal.querySelector('.modal__email');
 
-function handleModalConfirm() {
-  $portal.classList.remove('show-modal');
+function createModalToNewNewsletterSubscriber() {
+  const {
+    isSubmitting,
+    fields: { email },
+  } = NewsletterStore.getState();
 
-  $email.textContent = null;
+  if (!isSubmitting) return;
+
+  const $message = createElement(
+    'fragment',
+    null,
+    'O e-mail ',
+    createElement('strong', { className: 'modal__email' }, email),
+    createElement('br'),
+    'foi cadastrado com sucesso!'
+  );
+
+  const $modal = Modal({
+    title: 'Muito obrigado!',
+    message: $message,
+    onConfirm: function () {
+      $portal.classList.remove('show-modal');
+      $modal.remove();
+    },
+  });
+
+  $portal.appendChild($modal);
+  $portal.classList.add('show-modal');
 }
 
 export function addModalEvents() {
-  const $button = $modal.querySelector('.modal__confirm');
-
-  $button.addEventListener('click', handleModalConfirm);
-
-  NewsletterStore.subscribe(() => {
-    const {
-      isSubmitting,
-      fields: { email },
-    } = NewsletterStore.getState();
-
-    if (!isSubmitting) return;
-
-    $email.textContent = `"${email}"`;
-
-    $portal.classList.add('show-modal');
-  });
+  NewsletterStore.subscribe(createModalToNewNewsletterSubscriber);
 }
