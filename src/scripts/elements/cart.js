@@ -1,7 +1,9 @@
 import CartStore from '../store/CartStore.js';
 import CartItem from '../components/CartItem.js';
-import R$ from '../utils/formatCurrency.js';
 import Cart from '../lib/Cart/index.js';
+import R$ from '../utils/formatCurrency.js';
+import clearElementContent from '../utils/clearElementContent.js';
+import doubleDigit from '../utils/doubleDigit.js';
 
 const $cart = document.querySelector('.cart');
 const $bags = document.querySelectorAll('.purchases');
@@ -37,7 +39,7 @@ export function renderCartList() {
   const { items: cartItems } = CartStore.getState();
 
   const $cartList = $cart.querySelector('.cart__item-list');
-  $cartList.textContent = null;
+  clearElementContent($cartList);
 
   const $fragment = document.createDocumentFragment();
 
@@ -45,7 +47,7 @@ export function renderCartList() {
     function handleAddItem() {
       if (item.amount < 99) {
         CartStore.dispatch({ type: 'INCREASE_ITEM_AMOUNT', payload: { key: item.key } });
-        $cartQuantityValue.textContent = String(item.amount).padStart(2, 0);
+        $cartQuantityValue.textContent = doubleDigit(item.amount);
       }
       if (item.amount >= 99) {
         $quantityAddBtn.disabled = true;
@@ -56,7 +58,7 @@ export function renderCartList() {
     function handleSubtractItem() {
       if (item.amount > 1) {
         CartStore.dispatch({ type: 'DECREASE_ITEM_AMOUNT', payload: { key: item.key } });
-        $cartQuantityValue.textContent = String(item.amount).padStart(2, 0);
+        $cartQuantityValue.textContent = doubleDigit(item.amount);
       }
       if (item.amount <= 1) {
         $quantitySubtractBtn.disabled = true;
@@ -112,7 +114,12 @@ function changeCartTotalPrice() {
   }
 
   $cartTotalPrice.textContent = R$(total);
-  $cartInstallments.textContent = total > 0 ? `até 3x de ${R$(Cart.getInstallments(3))} sem juros` : null;
+
+  if (total > 0) {
+    $cartInstallments.textContent = `até 3x de ${R$(Cart.getInstallments(3))} sem juros`;
+  } else {
+    clearElementContent($cartInstallments);
+  }
 }
 
 export function addCartEvents() {

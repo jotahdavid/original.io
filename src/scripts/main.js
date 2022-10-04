@@ -11,12 +11,12 @@ import { renderGalleryItems } from './elements/gallery.js';
 import shuffleArray from './utils/shuffleArray.js';
 
 const carousel = new Carousel('.carousel-vertical__gallery');
-const gallery = new Gallery('.carousel-horizontal', { onChangePage: handleChangePage });
-
-function handleChangePage(page, limit) {
-  const $index = gallery._element.querySelector('.carousel-horizontal__controllers__index');
-  $index.textContent = `${page} de ${limit}`;
-}
+const gallery = new Gallery('.carousel-horizontal', {
+  onChangePage: (currentPage, limit) => {
+    const $index = gallery._element.querySelector('.carousel-horizontal__controllers__index');
+    $index.textContent = `${currentPage} de ${limit}`;
+  },
+});
 
 async function updateGallery(matches) {
   await gallery.scroll(0);
@@ -68,14 +68,15 @@ function createWindowResizeHandler() {
   };
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+function bootstrap() {
+  preventEvents();
   addMatchMediaEvents();
   addCartEvents();
   addLightboxEvents();
   addProductInfoEvents();
   addNewsletterEvents();
   addModalEvents();
-  preventEvents();
+
   setColorOptions();
 
   window.addEventListener('resize', createWindowResizeHandler());
@@ -87,4 +88,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   carousel.addEvents();
   gallery.addEvents();
-});
+}
+
+window.addEventListener('DOMContentLoaded', bootstrap);

@@ -1,5 +1,5 @@
 /**
- * @template {T}
+ * @template T
  * @param {T[]} arr
  * @returns {T[]}
  */

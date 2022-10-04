@@ -1,6 +1,7 @@
 import NewsletterStore from '../store/NewsletterStore.js';
 import isEmailValid from '../utils/isEmailValid.js';
 import isEmpty from '../utils/isEmpty.js';
+import clearElementContent from '../utils/clearElementContent.js';
 
 /**
  * @param {HTMLFormElement} form
@@ -106,7 +107,7 @@ export function addNewsletterEvents() {
       const $errorsField = $field.querySelector('.newsletter-signup__field-errors');
 
       $field.classList.remove('error');
-      $errorsField.textContent = null;
+      clearElementContent($errorsField);
     });
   });
 

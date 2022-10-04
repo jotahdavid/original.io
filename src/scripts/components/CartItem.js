@@ -1,4 +1,5 @@
 import createElement from '../utils/createElement.js';
+import doubleDigit from '../utils/doubleDigit.js';
 import R$ from '../utils/formatCurrency.js';
 
 /**
@@ -13,8 +14,6 @@ import R$ from '../utils/formatCurrency.js';
  * @returns {HTMLElement}
  */
 function CartItem({ name, price, amount, onAddItem, onSubtractItem, onRemove }) {
-  const doubleDigit = (value) => String(value).padStart(2, 0);
-
   return createElement(
     'li',
     { className: 'cart__item' },

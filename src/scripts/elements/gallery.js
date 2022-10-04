@@ -1,5 +1,6 @@
 import GalleryProduct from '../components/GalleryProduct.js';
 import R$ from '../utils/formatCurrency.js';
+import clearElementContent from '../utils/clearElementContent.js';
 
 /**
  * @typedef {{
@@ -21,7 +22,7 @@ import R$ from '../utils/formatCurrency.js';
  *  size: {
  *    min: number;
  *    max: number;
- *  } | null
+ *  } | null;
  * }} Product
  */
 
@@ -30,7 +31,7 @@ import R$ from '../utils/formatCurrency.js';
  */
 export function renderGalleryItems(items) {
   const $gallery = document.querySelector('.gallery-wrapper');
-  $gallery.textContent = null;
+  clearElementContent($gallery);
 
   const $fragment = document.createDocumentFragment();
 

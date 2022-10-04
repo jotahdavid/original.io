@@ -15,19 +15,8 @@ const isEqualOrClose = (value1, value2, n = 2) => {
   return value1 === value2 || (value2 >= value1 && value2 <= value1 + n) || (value2 <= value1 && value2 >= value1 - n);
 };
 
-const debugFn =
-  (fn, cb) =>
-  (...params) => {
-    cb(...params);
-    return fn(...params);
-  };
-
-const isEqualOrCloseDebug = debugFn(isEqualOrClose, (value1, value2) => {
-  console.log({ value1, value2 });
-});
-
 /**
- * @typedef {{ perPage?: number; onChangePage?: function; }} GalleryConfigs
+ * @typedef {{ itemPerPage?: number; onChangePage?: function; }} GalleryConfigs
  */
 
 class Gallery {
@@ -47,7 +36,7 @@ class Gallery {
     this._page = 0;
 
     this._changePageListener = config.onChangePage ?? null;
-    this.itemPerPage = config.perPage ?? 4;
+    this.itemPerPage = config.itemPerPage ?? 4;
   }
 
   /**
