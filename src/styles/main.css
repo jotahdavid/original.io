@@ -487,7 +487,6 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 3.75rem;
-  margin-bottom: 31.25rem;
 }
 
 @media (max-width: 43.6875rem) {

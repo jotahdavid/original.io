@@ -6,7 +6,6 @@
   grid-template-columns: repeat(2, 1fr);
 
   margin-bottom: rem(60);
-  margin-bottom: rem(500);
 
   @include breakpoint(smedium-only) {
     grid-template-columns: 1fr;
